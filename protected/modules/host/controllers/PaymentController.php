@@ -12,6 +12,63 @@ public $layout = '/layouts/main';
 		$eventattendees = EventAttendees::model()->paidAttendee()->findAll(array('condition' => 'event_id ='.$event->id));
 		$payments = Payments::model()->findAll(array('condition' => 'event_id = '.$event->id.' AND status_id = 1'));
 
+		if(isset($_GET['exports'])) {
+
+			foreach ($payments as $res) {
+				
+				$user = User::model()->find(array('condition'=>'account_id = :id', 'params'=>array(':id'=>$res->account_id)));
+
+				$a[] = array(
+					"Full Name" => User::model()->getCompleteName2($user->account_id),
+					"Email" => $user->account->username,
+					"Chapter" => Chapter::model()->getName($user->chapter_id),
+					"Member ID" => $user->member_id,
+					"Position" => Position::model()->getName($user->position_id),
+					"Picture Filename" => Fileupload::model()->getFileName($user->user_avatar),
+				);
+			}
+
+			if(count($payments) != 0){
+				Account::model()->download_send_headers(str_replace(array('"', "'", ' ', ','), '_', $event->name).date("Y-m-d").".csv");
+				echo Account::model()->array2csv($a);
+				die();
+			}
+		}
+
+		if(isset($_GET['profile-pics'])) {
+
+			# define file array
+			foreach ($payments as $res) {
+				$files[] = Fileupload::model()->getProfilePicture($res->account->user->user_avatar);
+			}
+
+			# create new zip opbject
+			$zip = new ZipArchive();
+
+			# create a temp file & open it
+			$tmp_file = tempnam('temp','');
+			$zip->open($tmp_file, ZipArchive::CREATE);
+
+			# loop through each file
+			foreach($files as $file){
+
+			    # download file
+			    $download_file = file_get_contents($file);
+
+			    #add it to the zip
+			    $zip->addFromString(basename($file),$download_file);
+
+			}
+			# close zip
+			$zip->close();
+
+			# send the file to the browser as a download
+			header('Content-disposition: attachment; filename='.str_replace(array('"', "'", ' ', ','), '_', $event->name).".zip");
+			header('Content-type: application/zip');
+			readfile($tmp_file);
+			die();
+		}
+
 		$attendeesDP=new CArrayDataProvider($eventattendees, array(
 			'pagination' => array(
 				'pageSize' => 20

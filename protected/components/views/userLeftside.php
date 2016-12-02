@@ -4,12 +4,6 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
       <div class="pull-left image">
-       <?php
-            $account = Account::model()->findByPk(Yii::app()->user->id);
-            $user = User::model()->find('account_id = '.Yii::app()->user->id);
-            $fileupload = Fileupload::model()->findByPk($account->user->user_avatar);
-            $user_avatar = $fileupload->filename;
-        ?>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/user_avatars/<?php echo $user_avatar; ?>" class="img-circle" alt="User Image" />
       </div>
       <div class="pull-left info">
@@ -23,7 +17,25 @@
       <!-- Optionally, you can add icons to the links -->
       <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/account/index"><i class='fa fa-home'></i> <span>Home</span></a></li>
       <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/account/profile"><i class='fa fa-user'></i> <span>My Profile</span></a></li>
-      <!-- <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/userBusiness/index"><i class='fa fa-group'></i> <span>Business Directory</span></a></li> -->
+
+      <?php if ($user->position_id == 9 || $user->position_id == 8 || $user->position_id == 4): ?>
+      <!-- <li class="treeview">
+        <a href="#">
+          <i class="fa fa-users"></i>
+          <span>List of Members</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><?php //echo CHtml::link('<i class="fa fa-user-plus"></i> Active Accounts', array('members/index', 's'=>1)); ?></li>
+          <li><?php //echo CHtml::link('<i class="fa fa-user-plus"></i> Inactive Accounts', array('members/index', 's'=>2)) ?></li>
+        </ul>
+      </li> -->
+      <li>
+        <?php echo CHtml::link('<i class="fa fa-list"></i> <span>Membership</span>', array('members/list')); ?>
+      </li>
+      <?php endif; ?>
+
+      <!-- <li><a href="<?php //echo Yii::app()->request->baseUrl; ?>/index.php/userBusiness/index"><i class='fa fa-group'></i> <span>Business Directory</span></a></li> -->
       <li class="treeview">
         <a href="#"><i class='fa fa-newspaper-o'></i> 
           <span>
@@ -69,8 +81,8 @@
       <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/survey"><i class='fa fa-bar-chart'></i> <span>Survey</span></a></li>
       <li>
         <a href="http://jci.org.ph/jcipadvantage.com/mod04/index.php/public/listall" target="_blank">
-          <span class="fa fa-download"></span>
-          JCIP Advantage Merchants
+          <i class="fa fa-download"></i>
+          <span>JCIP Advantage Merchants</span>
         </a>
       </li>
     </ul><!-- /.sidebar-menu -->

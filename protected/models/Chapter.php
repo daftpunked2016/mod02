@@ -118,4 +118,59 @@ class Chapter extends CActiveRecord
 		$chapter = Chapter::model()->findByPk($id);
 		return $chapter->region_id;
 	}
+
+	// $scope = [1]AVP | [2]RVP | [3] NT
+	// $type = [1]Regular Members | [2]Associate Members | [3] All
+	public function getMembershipCount($scope, $scope_id, $type)
+	{
+		$count = 0;
+		
+		switch ($scope) {
+			case 1:
+				// AVP
+				switch ($type) {
+					case 1:
+						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.region_id = :region_id AND TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) <= 40', 'params'=>array(':region_id'=>$scope_id)));
+						break;
+					case 2:
+						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.region_id = :region_id AND TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) > 40', 'params'=>array(':region_id'=>$scope_id)));
+						break;
+					case 3:
+						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.region_id = :region_id', 'params'=>array(':region_id'=>$scope_id)));
+						break;
+				}
+				break;
+			case 2:
+				// RVP
+				switch ($type) {
+					case 1:
+						$count = User::model()->userAccount()->isActive()->count(array('condition'=>'t.chapter_id = :chapter_id AND TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) <= 40', 'params'=>array(':chapter_id'=>$scope_id)));
+						break;
+					case 2:
+						$count = User::model()->userAccount()->isActive()->count(array('condition'=>'t.chapter_id = :chapter_id AND TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) > 40', 'params'=>array(':chapter_id'=>$scope_id)));
+						break;
+					case 3:
+						$count = User::model()->userAccount()->isActive()->count(array('condition'=>'t.chapter_id = :chapter_id', 'params'=>array(':chapter_id'=>$scope_id)));
+						break;
+				}
+
+				break;
+			case 3:
+				// NT
+				switch ($type) {
+					case 1:
+						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.area_no = :area_no AND TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) <= 40', 'params'=>array(':area_no'=>$scope_id)));
+						break;
+					case 2:
+						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.area_no = :area_no AND TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) > 40', 'params'=>array(':area_no'=>$scope_id)));
+						break;
+					case 3:
+						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.area_no = :area_no', 'params'=>array(':area_no'=>$scope_id)));
+						break;
+				}
+				break;
+		}
+
+		return $count;
+	}
 }

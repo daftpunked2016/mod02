@@ -53,6 +53,7 @@ class Payments extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'event' => array(self::BELONGS_TO, 'Event', 'event_id'),
+			'account' => array(self::BELONGS_TO, 'Account', 'account_id'),
 		);
 	}
 

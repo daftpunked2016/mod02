@@ -60,6 +60,10 @@
                 'emptyText' => "<tr><td colspan=\"6\">No available entries</td></tr>",
                 ));  ?>
             </div><!-- /.box-body -->
+            <div class="box-footer">
+              <?php echo CHtml::link('Download to CSV', array('payment/paid', 'exports'=>'true'), array('class'=>'btn btn-success btn-flat', 'title'=>'Export to CSV')); ?>
+              <?php echo CHtml::link('Download to Profile Pictures', array('payment/paid', 'profile-pics'=>'true'), array('class'=>'btn btn-danger btn-flat', 'title'=>'Export to CSV')); ?>
+            </div>
           </div><!-- /.box -->
         </div>
 	</div>

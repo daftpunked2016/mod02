@@ -322,7 +322,7 @@
                 </div>
                 <div class="pull-right">
                   <?php 
-                    echo CHtml::link('<button class="btn btn-danger"><span class="glyphicon glyphicon-remove" style="margin-right:5px;"></span>Delete </button>', array('account/deletework', 'id' => $data->id), array('confirm' => "Are you sure you want to delete this work?", 'title' => 'Delete Work'));
+                    echo CHtml::link('<button class="btn btn-danger"><span class="glyphicon glyphicon-remove" style="margin-right:5px;"></span>Delete </button>', array('account/deletework', 'id' => $work->id), array('confirm' => "Are you sure you want to delete this work?", 'title' => 'Delete Work'));
                   ?>
                 </div>
               </div>
