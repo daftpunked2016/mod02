@@ -1,0 +1,267 @@
+[28-Jul-2015 02:30:07 UTC] PHP Fatal error:  Class 'CHhtml' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/account/view.php on line 111
+[28-Jul-2015 03:43:17 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 302
+[28-Jul-2015 03:44:33 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 304
+[28-Jul-2015 03:44:47 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 305
+[28-Jul-2015 04:58:00 UTC] PHP Fatal error:  Class 'Region' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/account/view.php on line 183
+[30-Jul-2015 08:43:26 UTC] PHP Fatal error:  Call to a member function getCompleteName2() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/event/create.php on line 4
+[30-Jul-2015 08:54:18 UTC] PHP Fatal error:  Call to a member function getCompleteName2() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/event/create.php on line 10
+[30-Jul-2015 08:58:52 UTC] PHP Fatal error:  Call to a member function getCompleteName2() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/event/create.php on line 7
+[01-Aug-2015 11:44:56 UTC] PHP Fatal error:  Class 'FileRelation' not found in /home/web1dev2015/public_html/mod02/protected/controllers/AccountController.php on line 352
+[01-Aug-2015 11:46:12 UTC] PHP Fatal error:  Call to a member function saveAs() on a non-object in /home/web1dev2015/public_html/mod02/protected/controllers/AccountController.php on line 361
+[01-Aug-2015 11:47:39 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/controllers/AccountController.php on line 376
+[03-Aug-2015 03:42:42 UTC] PHP Fatal error:  Class 'EmailWrapper' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 222
+[03-Aug-2015 05:04:58 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/components/views/adminLeftside.php on line 29
+[03-Aug-2015 05:05:12 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/components/views/adminLeftside.php on line 29
+[03-Aug-2015 05:05:16 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/components/views/adminLeftside.php on line 29
+[03-Aug-2015 05:28:01 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/components/views/adminLeftside.php on line 29
+[03-Aug-2015 09:24:09 UTC] PHP Fatal error:  Class 'Accound' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 36
+[04-Aug-2015 02:48:02 UTC] PHP Fatal error:  Call to a member function getValidators() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2236
+[04-Aug-2015 02:48:41 UTC] PHP Fatal error:  Call to a member function getValidators() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2236
+[04-Aug-2015 02:48:43 UTC] PHP Fatal error:  Call to a member function getValidators() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2236
+[04-Aug-2015 08:46:12 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 33
+[04-Aug-2015 08:46:42 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 33
+[04-Aug-2015 08:46:58 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 33
+[04-Aug-2015 08:47:29 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 33
+[04-Aug-2015 08:50:53 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 33
+[04-Aug-2015 08:54:55 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 33
+[04-Aug-2015 08:55:15 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 33
+[07-Aug-2015 05:47:58 UTC] PHP Fatal error:  Class 'UserPosition' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 64
+[07-Aug-2015 05:49:54 UTC] PHP Fatal error:  Call to a member function save() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 67
+[07-Aug-2015 05:50:19 UTC] PHP Fatal error:  Call to a member function save() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/AccountController.php on line 67
+[09-Aug-2015 07:37:54 UTC] PHP Fatal error:  Call to a member function populateMsgProperties() on a non-object in /home/web1dev2015/public_html/mod02/protected/controllers/AccountController.php on line 1131
+[09-Aug-2015 07:40:02 UTC] PHP Fatal error:  Call to a member function populateMsgProperties() on a non-object in /home/web1dev2015/public_html/mod02/protected/controllers/AccountController.php on line 1131
+[09-Aug-2015 07:43:12 UTC] PHP Fatal error:  Class 'Account' not found in /home/web1dev2015/public_html/mod02/protected/controllers/AccountController.php on line 954
+[13-Aug-2015 08:11:03 UTC] PHP Fatal error:  Class 'AdminLoginForm' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/DefaultController.php on line 101
+[13-Aug-2015 08:11:45 UTC] PHP Fatal error:  Class 'HostLoginForm' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/DefaultController.php on line 101
+[13-Aug-2015 14:46:57 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[13-Aug-2015 14:49:26 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[13-Aug-2015 14:49:32 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[13-Aug-2015 15:37:46 UTC] PHP Fatal error:  Class 'EventType' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/event/create.php on line 132
+[13-Aug-2015 15:40:31 UTC] PHP Fatal error:  Class 'EventType' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/event/create.php on line 132
+[17-Aug-2015 01:08:51 UTC] PHP Fatal error:  Class 'AdminIdentity' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/models/HostLoginForm.php on line 56
+[17-Aug-2015 01:42:11 UTC] PHP Fatal error:  Class 'HostLoginForm' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/DefaultController.php on line 15
+[18-Aug-2015 03:17:12 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 127
+[18-Aug-2015 03:18:47 UTC] PHP Fatal error:  Call to a member function save() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 144
+[18-Aug-2015 07:28:17 UTC] PHP Fatal error:  Class 'AdminHeader' not found in /home/web1dev2015/public_html/mod02/framework/web/CWidgetFactory.php on line 147
+[18-Aug-2015 08:05:10 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[18-Aug-2015 08:05:26 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[18-Aug-2015 08:05:43 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[18-Aug-2015 08:07:58 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[19-Aug-2015 01:24:07 UTC] PHP Fatal error:  Call to a member function getHostCompleteName() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/views/default/index.php on line 10
+[19-Aug-2015 01:34:15 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[19-Aug-2015 01:40:00 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[19-Aug-2015 01:43:38 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[19-Aug-2015 01:43:42 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[19-Aug-2015 02:02:01 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[19-Aug-2015 02:40:05 UTC] PHP Fatal error:  Class 'AdminHeader' not found in /home/web1dev2015/public_html/mod02/framework/web/CWidgetFactory.php on line 147
+[19-Aug-2015 02:47:30 UTC] PHP Fatal error:  Call to a member function setScenario() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/AccountController.php on line 255
+[19-Aug-2015 02:49:16 UTC] PHP Fatal error:  Call to a member function setScenario() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/AccountController.php on line 255
+[19-Aug-2015 02:53:50 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 02:55:13 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 02:56:41 UTC] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 1414
+[19-Aug-2015 02:56:56 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 02:58:45 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 02:59:21 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 02:59:32 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:00:03 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:00:24 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:04:05 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:04:41 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:06:53 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:07:24 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:07:32 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:09:05 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:09:07 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:09:40 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:10:15 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:10:58 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:12:50 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:17:41 UTC] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 1414
+[19-Aug-2015 03:18:51 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[19-Aug-2015 03:19:10 UTC] PHP Fatal error:  Call to a member function setScenario() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/AccountController.php on line 249
+[19-Aug-2015 03:21:39 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:22:55 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:22:56 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 03:25:11 UTC] PHP Fatal error:  Class 'findPasswords' not found in /home/web1dev2015/public_html/mod02/framework/validators/CValidator.php on line 187
+[19-Aug-2015 03:27:06 UTC] PHP Fatal error:  Class 'findPasswords' not found in /home/web1dev2015/public_html/mod02/framework/validators/CValidator.php on line 187
+[19-Aug-2015 07:11:38 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[19-Aug-2015 07:15:08 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 192
+[22-Aug-2015 14:58:04 UTC] PHP Fatal error:  Call to undefined method stdClass::validate() in /home/web1dev2015/public_html/mod02/protected/models/Host.php on line 231
+[22-Aug-2015 15:01:28 UTC] PHP Fatal error:  Call to undefined method stdClass::validate() in /home/web1dev2015/public_html/mod02/protected/models/Host.php on line 231
+[22-Aug-2015 15:07:38 UTC] PHP Fatal error:  Class 'Host' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 317
+[23-Aug-2015 03:57:04 UTC] PHP Fatal error:  Class 'WebAdmin' not found in /home/web1dev2015/public_html/mod02/framework/YiiBase.php on line 217
+[23-Aug-2015 10:59:45 UTC] PHP Fatal error:  Class 'Events' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 301
+[23-Aug-2015 11:23:32 UTC] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home/web1dev2015/public_html/mod02/framework/web/helpers/CHtml.php on line 2002
+[27-Aug-2015 07:13:08 UTC] PHP Fatal error:  Call to a member function attributes() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 16
+[27-Aug-2015 07:46:08 UTC] PHP Fatal error:  Call to a member function attributes() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 13
+[27-Aug-2015 08:10:20 UTC] PHP Fatal error:  Call to undefined function strtodate() in /home/web1dev2015/public_html/mod02/protected/modules/host/views/payment/paid.php on line 66
+[27-Aug-2015 08:11:31 UTC] PHP Fatal error:  Call to undefined function strtodate() in /home/web1dev2015/public_html/mod02/protected/modules/host/views/payment/paid.php on line 66
+[28-Aug-2015 03:21:17 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:28:06 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:28:08 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:28:48 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:28:49 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:28:54 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:28:56 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:28:57 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:39:00 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:41:42 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:48:22 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:48:26 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 03:48:40 UTC] PHP Fatal error:  Class 'MYPDF' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 260
+[28-Aug-2015 04:17:58 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:21:54 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:22:34 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:22:44 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:22:46 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:22:49 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:22:51 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:23:15 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:46:01 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:46:02 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:46:04 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:46:06 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:47:48 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:47:49 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:50:38 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:59:53 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 04:59:55 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 05:00:14 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 05:00:17 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 05:00:54 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 05:01:16 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 05:03:40 UTC] PHP Fatal error:  Class 'TCPDF' not found in /home/web1dev2015/public_html/mod02/protected/extensions/MYPDF.php on line 10
+[28-Aug-2015 05:24:33 UTC] PHP Fatal error:  Class 'PaymentSchemes' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 275
+[29-Aug-2015 13:49:33 UTC] PHP Fatal error:  Class 'Payment' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 264
+[30-Aug-2015 15:13:34 UTC] PHP Fatal error:  Class 'Events' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 125
+[01-Sep-2015 13:45:12 UTC] PHP Fatal error:  Class 'EventAttendee' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/EventController.php on line 14
+[02-Sep-2015 07:38:04 UTC] PHP Fatal error:  Class 'Payment' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 70
+[02-Sep-2015 07:38:48 UTC] PHP Fatal error:  Call to undefined function now() in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 79
+[02-Sep-2015 07:56:04 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 104
+[02-Sep-2015 07:57:13 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 108
+[13-Sep-2015 11:40:12 UTC] PHP Fatal error:  Class 'Payment' not found in /home/web1dev2015/public_html/mod02/protected/controllers/EventController.php on line 374
+[14-Sep-2015 01:44:24 UTC] PHP Fatal error:  Class 'Events' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/components/HostLogin.php on line 12
+[14-Sep-2015 01:44:50 UTC] PHP Fatal error:  Class 'Events' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/components/HostLogin.php on line 12
+[14-Sep-2015 01:44:52 UTC] PHP Fatal error:  Class 'Events' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/components/HostLogin.php on line 12
+[14-Sep-2015 03:09:11 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/components/views/hostLeftside.php on line 32
+[14-Sep-2015 03:11:06 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/components/views/hostLeftside.php on line 32
+[14-Sep-2015 03:11:08 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/components/views/hostLeftside.php on line 32
+[14-Sep-2015 03:52:45 UTC] PHP Fatal error:  Call to a member function attributes() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 80
+[14-Sep-2015 08:15:14 UTC] PHP Fatal error:  Class 'Events' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 318
+[15-Sep-2015 02:59:43 UTC] PHP Fatal error:  Class 'EventAttenddees' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/views/sales/_list_sales.php on line 2
+[15-Sep-2015 03:07:58 UTC] PHP Fatal error:  Class 'Payment' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/views/sales/_list_sales.php on line 5
+[15-Sep-2015 07:39:22 UTC] PHP Fatal error:  Class 'Payment' not found in /home/web1dev2015/public_html/mod02/protected/models/Event.php on line 246
+[15-Sep-2015 08:47:51 UTC] PHP Fatal error:  Class 'Event' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/components/HostLeftside.php on line 15
+[15-Sep-2015 09:29:18 UTC] PHP Fatal error:  Class 'Event' not found in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/SalesController.php on line 58
+[18-Sep-2015 06:17:09 UTC] PHP Fatal error:  Call to a member function getCompleteName2() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/host/views/sales/_list_sales.php on line 18
+[18-Sep-2015 06:25:33 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 114
+[18-Sep-2015 06:25:41 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 143
+[18-Sep-2015 06:26:27 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 143
+[18-Sep-2015 06:26:34 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 114
+[18-Sep-2015 06:27:30 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 114
+[18-Sep-2015 06:27:31 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/web1dev2015/public_html/mod02/protected/modules/host/controllers/PaymentController.php on line 114
+[07-Oct-2015 02:21:12 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/web1dev2015/public_html/mod02/protected/components/UserIdentity.php on line 39
+[07-Oct-2015 07:45:51 UTC] PHP Fatal error:  Call to undefined method stdClass::validate() in /home/web1dev2015/public_html/mod02/protected/controllers/SiteController.php on line 261
+[04-Nov-2015 01:31:46 UTC] PHP Fatal error:  Call to a member function send() on a non-object in /home/web1dev2015/public_html/mod02/protected/models/EmailWrapper.php on line 126
+[21-Nov-2015 05:41:44 UTC] PHP Fatal error:  Call to a member function saveAs() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 130
+[10-Jan-2016 08:48:43 UTC] PHP Fatal error:  Call to a member function saveAs() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 130
+[10-Jan-2016 09:12:54 UTC] PHP Fatal error:  Call to a member function saveAs() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 130
+[13-Jan-2016 09:12:51 UTC] PHP Fatal error:  Call to undefined method EmailWrapper::setBcc() in /home/web1dev2015/public_html/mod02/protected/models/Account.php on line 342
+[09-Feb-2016 01:51:31 UTC] PHP Fatal error:  Class 'SurveyQuestionnaires' not found in /home/web1dev2015/public_html/mod02/framework/db/ar/CActiveRecord.php on line 395
+[09-Feb-2016 03:18:26 UTC] PHP Fatal error:  Class 'Region' not found in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/survey/_view.php on line 26
+[10-Feb-2016 10:11:10 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/web1dev2015/public_html/mod02/protected/controllers/SurveyController.php on line 152
+[10-Feb-2016 10:11:14 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/web1dev2015/public_html/mod02/protected/controllers/SurveyController.php on line 152
+[11-Feb-2016 03:46:08 UTC] PHP Fatal error:  Call to a member function deleteAll() on a non-object in /home/web1dev2015/public_html/mod02/protected/modules/admin/controllers/SurveyController.php on line 227
+[22-Mar-2016 03:43:01 UTC] PHP Fatal error:  Class 'Positon' not found in /home/web1dev2015/public_html/mod02/protected/models/Position.php on line 98
+[15-Apr-2016 09:36:02 UTC] PHP Fatal error:  Cannot use object of type CArrayDataProvider as array in /home/web1dev2015/public_html/mod02/protected/views/userBusiness/list.php on line 16
+[15-Apr-2016 09:44:53 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 09:46:14 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 09:46:47 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:08:15 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:10:55 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:11:30 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:11:31 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:17:17 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:17:18 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:17:36 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:17:41 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:17:53 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:20:41 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[15-Apr-2016 10:20:57 UTC] PHP Fatal error:  Call to a member function getData() on a non-object in /home/web1dev2015/public_html/mod02/framework/zii/widgets/CBaseListView.php on line 111
+[23-May-2016 17:13:56 UTC] PHP Fatal error:  Call to undefined function countAreaRes() in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/survey/view_summary.php on line 92
+[23-May-2016 17:21:02 UTC] PHP Fatal error:  Call to undefined function getRegionAnsPercentage() in /home/web1dev2015/public_html/mod02/protected/modules/admin/views/survey/view_summary.php on line 120
+[17-Jun-2016 18:12:58 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 18:12:58 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 18:36:15 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 18:36:15 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 19:59:02 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 19:59:02 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 19:59:21 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 19:59:21 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 19:59:35 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 19:59:35 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:02:58 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:02:58 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:08:10 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:08:10 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:34:07 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:34:07 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:37:16 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:37:16 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:39:23 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 20:39:23 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 21:24:01 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 21:24:01 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 21:30:46 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 21:30:46 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 22:36:37 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 22:36:37 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 22:36:48 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 22:36:48 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 22:38:14 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/framework/base/interfaces.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[17-Jun-2016 22:38:14 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/framework/base/interfaces.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/YiiBase.php on line 870
+[23-Jun-2016 17:25:22 Asia/Singapore] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/quadrant/public_html/mod02/protected/modules/admin/controllers/EventController.php on line 182
+[28-Jun-2016 22:34:15 America/Chicago] PHP Warning:  POST Content-Length of 12079680 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 22:34:52 America/Chicago] PHP Warning:  POST Content-Length of 12079684 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 22:35:34 America/Chicago] PHP Warning:  POST Content-Length of 12079684 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 22:35:57 America/Chicago] PHP Warning:  POST Content-Length of 12079684 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 22:36:59 America/Chicago] PHP Warning:  POST Content-Length of 12079684 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 22:40:26 America/Chicago] PHP Warning:  POST Content-Length of 12079662 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 22:41:01 America/Chicago] PHP Warning:  POST Content-Length of 12079662 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[30-Jun-2016 08:15:07 America/Chicago] PHP Warning:  POST Content-Length of 11544846 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[30-Jun-2016 08:18:19 America/Chicago] PHP Warning:  POST Content-Length of 11544846 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[30-Jun-2016 08:20:17 America/Chicago] PHP Warning:  POST Content-Length of 11544846 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[30-Jun-2016 08:22:24 America/Chicago] PHP Warning:  POST Content-Length of 11544860 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[30-Jun-2016 11:09:16 America/Chicago] PHP Warning:  POST Content-Length of 10033353 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 06:57:09 America/Chicago] PHP Warning:  POST Content-Length of 8717122 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 07:01:06 America/Chicago] PHP Warning:  POST Content-Length of 8717128 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 07:45:30 America/Chicago] PHP Warning:  POST Content-Length of 8717121 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 07:49:51 America/Chicago] PHP Warning:  POST Content-Length of 8717121 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 07:53:26 America/Chicago] PHP Warning:  POST Content-Length of 8717121 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 08:31:08 America/Chicago] PHP Warning:  POST Content-Length of 8717121 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 08:41:04 America/Chicago] PHP Warning:  POST Content-Length of 8717121 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 08:52:39 America/Chicago] PHP Warning:  POST Content-Length of 8717121 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[10-Jul-2016 02:44:32 America/Chicago] PHP Warning:  POST Content-Length of 12079631 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[14-Jul-2016 17:30:10 Asia/Singapore] PHP Parse error:  syntax error, unexpected ')' in /home/quadrant/public_html/mod02/protected/modules/admin/controllers/DefaultController.php on line 235
+[14-Jul-2016 17:30:15 Asia/Singapore] PHP Parse error:  syntax error, unexpected ')' in /home/quadrant/public_html/mod02/protected/modules/admin/controllers/DefaultController.php on line 235
+[19-Jul-2016 21:53:24 America/Chicago] PHP Warning:  POST Content-Length of 32186112 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[19-Jul-2016 22:00:18 America/Chicago] PHP Warning:  POST Content-Length of 32186112 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[19-Jul-2016 22:12:54 America/Chicago] PHP Warning:  POST Content-Length of 32186112 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[20-Jul-2016 02:33:12 America/Chicago] PHP Warning:  POST Content-Length of 32186112 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[25-Jul-2016 21:17:30 America/Chicago] PHP Warning:  require(/home/quadrant/public_html/mod02/protected/config/main.php): failed to open stream: No such file or directory in /home/quadrant/public_html/mod02/framework/base/CApplication.php on line 133
+[25-Jul-2016 21:17:30 America/Chicago] PHP Fatal error:  require(): Failed opening required '/home/quadrant/public_html/mod02/protected/config/main.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/quadrant/public_html/mod02/framework/base/CApplication.php on line 133
+[28-Jul-2016 10:59:42 America/Chicago] PHP Warning:  POST Content-Length of 19718611 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jul-2016 11:05:18 America/Chicago] PHP Warning:  POST Content-Length of 18240720 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jul-2016 11:07:02 America/Chicago] PHP Warning:  POST Content-Length of 18240720 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Aug-2016 00:03:45 America/Chicago] PHP Warning:  POST Content-Length of 10667072 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Aug-2016 00:05:52 America/Chicago] PHP Warning:  POST Content-Length of 10667072 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Aug-2016 00:07:32 America/Chicago] PHP Warning:  POST Content-Length of 10667080 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Aug-2016 00:09:20 America/Chicago] PHP Warning:  POST Content-Length of 10667080 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Aug-2016 00:11:27 America/Chicago] PHP Warning:  POST Content-Length of 10667082 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Aug-2016 00:13:27 America/Chicago] PHP Warning:  POST Content-Length of 10667082 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Aug-2016 00:23:40 America/Chicago] PHP Warning:  POST Content-Length of 10667082 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[12-Sep-2016 23:31:47 America/Chicago] PHP Warning:  POST Content-Length of 24991560 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[13-Sep-2016 00:10:39 America/Chicago] PHP Warning:  POST Content-Length of 24991558 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[20-Sep-2016 02:31:42 America/Chicago] PHP Warning:  POST Content-Length of 11787750 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[20-Sep-2016 02:31:51 America/Chicago] PHP Warning:  POST Content-Length of 11787750 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[20-Sep-2016 02:33:51 America/Chicago] PHP Warning:  POST Content-Length of 11787750 bytes exceeds the limit of 8388608 bytes in Unknown on line 0

@@ -1,0 +1,11 @@
+body {
+    background-image: url(../images/header-bg.jpg);
+}
+
+#user-senno{
+	display:none;
+}
+
+#show-errors{
+	display:none;
+}
