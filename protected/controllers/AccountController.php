@@ -154,7 +154,7 @@ class AccountController extends Controller
 										if($userposition->position_id === '11')
 											Yii::app()->user->setFlash('success','You have successfully registered an account! Please wait for the email of approval by the JCI Headquarters.');
 										else
-											Yii::app()->user->setFlash('success','You have successfully registered an account! Please wait for the email of approval by your chapter president.');
+											Yii::app()->user->setFlash('success','<b>Your Registration is now for Approval in your Chapter Level. Please contact your Local President. Thank you very much!</b>');
 										
 										//EMAIL NOTIFICATIONS
 										if($user->position_id == 11) //for president -> send to hq
