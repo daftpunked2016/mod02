@@ -1,1 +1,1 @@
-# JCI PHilippines
+# myJCIP
