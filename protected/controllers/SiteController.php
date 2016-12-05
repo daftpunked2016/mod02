@@ -307,6 +307,16 @@ class SiteController extends Controller
 
 					$valid = $currentposition->validate();
 
+					if($currentposition->position_id == 11 || $currentposition->position_id == 13) {
+						$position_name = ($currentposition->position_id == 11) ? "PRESIDENT" : "SECRETARY";
+						$valid_for_position = User::checkIfValidForPosition($currentposition->position_id, $currentposition->chapter_id);
+						$valid = $valid_for_position && $valid;
+
+						if(!$valid_for_position) {
+							Yii::app()->user->setFlash("error", "Sorry, there's an account already registered as a {$position_name} in the selected chapter.");
+						} 
+					}
+
 					if ($valid)
 					{
 						try

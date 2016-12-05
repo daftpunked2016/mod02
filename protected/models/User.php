@@ -274,6 +274,11 @@ class User extends CActiveRecord
 				'condition' => 'account.status_id = 4',
 			),
 
+			'isActiveAndPending' => array(
+				'join' => 'INNER JOIN jci_account AS account ON account.id = t.account_id',
+				'condition' => 'account.status_id != 4',
+			),
+
 			'userAccount' => array(
 				'join' => 'INNER JOIN jci_account AS a ON a.id = t.account_id',
 				'condition' => 'a.account_type_id = 2',
@@ -366,6 +371,19 @@ class User extends CActiveRecord
 		$total = $active + $inactive;
 
 		return $total;
+	}
+
+	public static function checkIfValidForPosition($position_id, $chapter_id) 
+	{
+		$user_count = User::model()
+			->userAccount()
+			->isActiveAndPending()
+			->count(array(
+				'condition'=> 'position_id = :position_id AND chapter_id = :chapter_id',
+				'params'=> array(':position_id'=>$position_id, ':chapter_id'=>$chapter_id)
+			));
+
+		return ($user_count == 0) ? true : false;
 	}
 
 }

@@ -28,7 +28,7 @@ class AccountController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','register', 'listRegions', 'listChapters', 'listChapterMembers', 'listNotTrainers','listPositions', 'findRegion',  'listSubtype', 'getpk'),
+				'actions'=>array('index','view','register', 'listRegions', 'listChapters', 'listChapterMembers', 'listNotTrainers','listPositions', 'findRegion',  'listSubtype', 'getpk', 'test'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -81,6 +81,7 @@ class AccountController extends Controller
 	//Account Registration (Full Step)
 	public function actionRegister()
 	{
+		$errors = array();
 		$this->layout='//layouts/login';
 		$account = new Account;
 		$user = new User;
@@ -90,6 +91,8 @@ class AccountController extends Controller
 		$account->setScenario("createNewAccount");
 		$user->setScenario("createNewUser");
 		
+		//User::checkIfValidForPosition(11, 334)
+
 		if ((isset($_POST['Account'])) AND (isset($_POST['User'])))
 		{
 			$account->attributes = $_POST['Account'];
@@ -100,6 +103,16 @@ class AccountController extends Controller
 			
 			$valid = $account->validate();
 			$valid = $user->validate() && $valid;
+
+			if($user->position_id == 11 || $user->position_id == 13) {
+				$position_name = ($user->position_id == 11) ? "PRESIDENT" : "SECRETARY";
+				$valid_for_position = User::checkIfValidForPosition($user->position_id, $user->chapter_id);
+				$valid = $valid_for_position && $valid;
+
+				if(!$valid_for_position) {
+					$errors += array("Sorry, there's an account already registered as a {$position_name} in the selected chapter.");
+				} 
+			}
 			
 			if ($valid)
 			{	
@@ -215,7 +228,7 @@ class AccountController extends Controller
 			}
 			else
 			{
-				$errors = $account->getErrors();
+				$errors += $account->getErrors();
 				$errors += $user->getErrors();
 				echo json_encode($errors); 
 				exit;
@@ -1114,6 +1127,16 @@ class AccountController extends Controller
 			{
 				$userposition->attributes = $_POST['UserPositions'];
 				$valid = $userposition->validate();
+
+				if($userposition->status_id == 1 && ($userposition->position_id == 11 || $userposition->position_id == 13)) {
+					$position_name = ($userposition->position_id == 11) ? "PRESIDENT" : "SECRETARY";
+					$valid_for_position = User::checkIfValidForPosition($userposition->position_id, $userposition->chapter_id);
+					$valid = $valid_for_position && $valid;
+
+					if(!$valid_for_position) {
+						Yii::app()->user->setFlash("error", "Sorry, there's an account already registered as a {$position_name} in the selected chapter.");
+					} 
+				}		
 				
 				if ($valid)
 				{
@@ -1123,8 +1146,8 @@ class AccountController extends Controller
 							{
 								if($userposition->status_id == 1)
 								{
+									$account->status_id = ($userposition->position->category == "National") ? 3 : 2;
 									$user->position_id = $userposition->position_id;
-									$account->status_id = 2;
 									$user->save();
 									$account->save();
 								}
@@ -1430,7 +1453,7 @@ class AccountController extends Controller
 		$account_id = Yii::app()->user->id;
 		$accountRestricted = Account::model()->findByPk($account_id);
 		$userRestricted = User::model()->find('account_id = '.$account_id);
-		$account=	Account::model()->findByPk($id);	
+		$account =	Account::model()->findByPk($id);	
 
 		if($userRestricted->position_id == 11 || $userRestricted->position_id == 13)
 		{

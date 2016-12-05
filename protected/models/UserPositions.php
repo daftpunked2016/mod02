@@ -46,9 +46,9 @@ class UserPositions extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'position' => array(self::BELONGS_TO, 'Position', 'position_id'),
 		);
 	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
