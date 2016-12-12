@@ -242,4 +242,13 @@ class MembersController extends Controller
 			'membersDP'=>$membersDP
 		));
 	}
+
+	public function actionTest($cid)
+	{
+		$condition = array('condition'=>'chapter_id = :cid', 'params'=>array(':cid'=>$cid));
+		$members = User::model()->isActive()->userAccount()->associateMem()->count($condition);
+
+
+		print_r($members);exit;
+	}
 }

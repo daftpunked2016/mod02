@@ -24,6 +24,8 @@ class User extends CActiveRecord
 	CONST STATUS_ACTIVE = 1;
 	CONST STATUS_INACTIVE = 2; 
 	CONST STATUS_INACTIVE_PAUSE = 3;
+	CONST REGULAR_MEM = "R";
+	CONST ASSOCIATE_MEM = "A";
 	/**
 	 * @return string the associated database table name
 	 */
@@ -309,6 +311,14 @@ class User extends CActiveRecord
 				'join' => 'INNER JOIN jci_chapter AS chapter ON chapter.id = t.chapter_id',
 				'condition' => 'area_no = 5',
 			),
+
+			'associateMem' => array(
+				'condition'=> 'TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) > 40'
+			),
+
+			'regularMem' => array(
+				'condition'=> 'TIMESTAMPDIFF(YEAR, t.birthdate, CURDATE()) < 41'
+			)
 		);
 	}
 
@@ -384,6 +394,30 @@ class User extends CActiveRecord
 			));
 
 		return ($user_count == 0) ? true : false;
+	}
+
+	public function getMembershipType() {
+		$from = new DateTime($this->birthdate);
+		$to   = new DateTime('today');
+		$age = $from->diff($to)->y;
+		if($age > 40) {
+			return self::ASSOCIATE_MEM;
+		}
+
+		return self::REGULAR_MEM;
+	}
+
+	// R = Regular, A = Assoc
+	public static function totalMembersByAge($membership_type, $chapter_id)
+	{
+		$condition = array('condition'=>'chapter_id = :cid', 'params'=>array(':cid'=>$chapter_id));
+
+		switch($membership_type) {
+			case self::REGULAR_MEM:
+				return self::model()->isActiveAndPendingToPres()->userAccount()->regularMem()->count($condition);
+			case self::ASSOCIATE_MEM:
+				return self::model()->isActiveAndPendingToPres()->userAccount()->associateMem()->count($condition);
+		}
 	}
 
 }

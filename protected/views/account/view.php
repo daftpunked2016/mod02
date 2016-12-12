@@ -210,7 +210,7 @@
 
   <hr />
 
-  <div class="row" id="userBusinessWork" style="margin-top:20px;">
+  <div class="row" id="userBusinessWork" style="margin-top:20px; padding-bottom:40px;">
     <div class="row">
       <h2 style="margin-left:40px;" class="pull-left"> <i class="fa fa-briefcase" style="margin-right:10px;"></i> Career </h2>
     </div>
@@ -318,6 +318,40 @@
       <div class="col-md-3"></div>
     </div>
     <?php endif; ?>
+  </div>
+
+  <hr />
+
+  <div class="row" id="projectsHandled" style="margin-top:20px;">
+    <div class="row">
+      <h2 style="margin-left:40px;" class="pull-left"> <i class="fa fa-book" style="margin-right:10px;"></i> Projects Handled </h2>
+    </div>
+    <div class="row" style="margin-top:20px;">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="box">
+            <div class="box-body table-responsive no-padding">
+              <?php  $this->widget('zii.widgets.CListView', array(
+              'dataProvider'=>$projectsDP,
+              'itemView'=>'_list_projects',
+              'template' => "{sorter}<table id=\"example2\"class=\"table table-bordered table-hover\" >
+                  <thead>
+                    <th>Project Title</th>
+                    <th>Date</th>
+                    <th>Position</th>
+                  </thead>
+                  <tbody>
+                    {items}
+                  </tbody>
+                </table>
+                {pager}",
+              'emptyText' => "<tr><td colspan=\"6\">No available entries</td></tr>",
+              ));  ?>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+      </div>
+      <div class="col-md-1"></div>
+    </div>
   </div>
 
 </section><!-- /.content -->

@@ -36,8 +36,7 @@
           <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/admin/account/activesen"><i class="fa fa-user-plus"></i> Active Senator <span class="badge" style="margin-left:5px;"><?php echo Account::model()->userAccount()->isActiveSen()->count(); ?></span></a></li>
           <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/admin/account/inactivesen"><i class="fa fa-user-times"></i> Pending Senator <span class="badge" style="margin-left:5px;"><?php echo Account::model()->userAccount()->isInactiveSen()->count(); ?></span></a></li>
           <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/admin/account/inactivenatpos"><i class="fa fa-user-times"></i> Pending Nat. Pos. <span class="badge" style="margin-left:5px;"><?php echo Account::model()->userAccount()->isInactivePause()->with(array('position'=>array('condition'=>'category = "National"',)))->count(); ?></span></a></li>
-          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/admin/account/pendingpresident"><i class="fa fa-user-times"></i> Pending President <span class="badge" style="margin-left:5px;"><?php echo Account::model()->userAccount()->presAccount()->count(); ?></span></a></li>   
-          
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/admin/account/pendingpresident"><i class="fa fa-user-times"></i> Pending President <span class="badge" style="margin-left:5px;"><?php echo Account::model()->userAccount()->presAccount()->count(); ?></span></a></li>  
         </ul>
       </li>
       <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/admin/userBusiness/index"><i class='fa fa-book'></i> <span>Business Directory</span></a></li>

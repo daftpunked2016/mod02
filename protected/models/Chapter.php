@@ -26,8 +26,8 @@ class Chapter extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('chapter', 'required'),
-			array('region_id', 'numerical', 'integerOnly'=>true),
+			array('chapter, max_regular, max_associate', 'required'),
+			array('region_id, max_regular, max_associate', 'numerical', 'integerOnly'=>true),
 			array('chapter', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -44,6 +44,7 @@ class Chapter extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'users' => array(self::HAS_MANY, 'User', 'chapter_id'),
+			'region' => array(self::BELONGS_TO, 'AreaRegion', 'region_id'),
 		);
 	}
 
@@ -172,5 +173,83 @@ class Chapter extends CActiveRecord
 		}
 
 		return $count;
+	}
+
+	public function getCategory($total_members = null)
+	{
+		if($total_members == null) {
+			$total_members = $this->computeAllowedMembers();
+		} 
+
+		if($total_members >= 25 && $total_members <= 45) {
+			return 3;
+		} else if($total_members >= 46 && $total_members <= 75) {
+			return 2;
+		} else if($total_members >= 76) {
+			return 1;
+		} else {
+			return null;
+		}
+	}
+
+	public function getVotingStrength($total_members = null)
+	{
+		if($total_members == null) {
+			$total_members = $this->computeAllowedMembers();
+		} 
+
+		if($total_members >= 25 && $total_members <= 34) {
+			return 3;
+		} else if($total_members >= 35 && $total_members <= 44) {
+			return 4;
+		} else if($total_members >= 45 && $total_members <= 59) {
+			return 5;
+		} else if($total_members >= 60 && $total_members <= 74) {
+			return 6;
+		} else if($total_members >= 74 && $total_members <= 100) {
+			return 7;
+		} else if($total_members >= 100) {
+			$min = 101;
+			$max = $min + 23;
+			$vs = 8;
+			
+			while($total_members > $max) {
+				$max += 23; $vs++;
+			}
+
+			return $vs;
+		} else {
+			return null;
+		}
+	}
+
+	public function computeAllowedMembers()
+	{
+		return $this->max_regular + $this->max_associate;
+	}
+
+	public static function checkIfLimitMaxed($membership_type, $chapter_id)
+	{
+		$chapter = self::model()->findByPk($chapter_id);
+		$current_members_type_total = User::totalMembersByAge($membership_type, $chapter_id);
+
+		if($membership_type == User::REGULAR_MEM) {
+			$max_total = $chapter->max_regular;
+		} else {
+			$max_total = $chapter->max_associate;
+		}
+		
+		return $max_total > $current_members_type_total;
+	}
+
+	public static function getMaxMembers($membership_type, $chapter_id)
+	{
+		$chapter = self::model()->findByPk($chapter_id);
+
+		if($membership_type == User::REGULAR_MEM) {
+			return $chapter->max_regular;
+		} else {
+			return $chapter->max_associate;
+		}
 	}
 }

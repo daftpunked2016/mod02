@@ -35,7 +35,7 @@ class AccountController extends Controller
 				'actions'=>array('update', 'changePassword', 'addBusinessWork', 'listCities' , 
 					'addPosition', 'updatePosition', 'deletePosition', 'updateBusiness','deleteBusiness', 'updateWork','deleteWork', 'profile', 
 					'viewBusiness', 'listInactiveDelegates','listActiveDelegates', 'activateAccount',
-					'deactivateAccount','changeposter', 'changeBusinessLogo', 'viewWork', 'sendEmail'),
+					'deactivateAccount','changeposter', 'changeBusinessLogo', 'viewWork', 'sendEmail', 'test'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -64,13 +64,20 @@ class AccountController extends Controller
 			$positionsDP = new CArrayDataProvider($positions, array(
 				'pagination' => array(
 					'pageSize' => 5
-				)
-		));
+				)));
+
+			$projectsHandled = UserHandledProjects::model()->findAll(array('condition'=>'account_id = '.$account_id, 'order'=>'date_completed desc')); 
+			$projectsDP = new CArrayDataProvider($projectsHandled, array(
+				'pagination' => array(
+					'pageSize' => 5
+				)));
+
 			$user = User::model()->find('account_id ='.$account_id);
 			$this->render('view',array(
 					'account' => $account,
 					'user' => $user,
 					'positionsDP' => $positionsDP,
+					'projectsDP'=>$projectsDP
 				));	
 
 		}
@@ -393,14 +400,21 @@ class AccountController extends Controller
 			$positionsDP = new CArrayDataProvider($positions, array(
 				'pagination' => array(
 					'pageSize' => 5
-				)
-		));
+				)));
+
+			$projectsHandled = UserHandledProjects::model()->findAll(array('condition'=>'account_id = '.$account_id, 'order'=>'date_completed desc')); 
+			$projectsDP = new CArrayDataProvider($projectsHandled, array(
+				'pagination' => array(
+					'pageSize' => 5
+				)));
+
 			$user = User::model()->find('account_id ='.$account_id);
 			$this->render('profile',array(
 					'account' => $account,
 					'user' => $user,
 					'positionsDP' => $positionsDP,
 					'positions' => $positions,
+					'projectsDP'=> $projectsDP,
 					'page'=>$page,
 				));	
 
@@ -1385,62 +1399,69 @@ class AccountController extends Controller
 			if($id!=null)
 			{
 				$user= User::model()->find('account_id = '.$id);
-				
-				if($user->title == 1 || $user->position->category == "National") //if JCI SEN
-					$account->status_id = 3;
-				else //if MEMBER
-					$account->status_id = 1;
 
-				$connection = Yii::app()->db;
-				$transaction = $connection->beginTransaction();
-				
-				try
+				if(Chapter::checkIfLimitMaxed($user->getMembershipType(), $user->chapter_id)) 
 				{
-					if($account->save(false))
-						{
-							$transaction->commit();
-							$send = 1;
-							
-							//Email formatting
-							$subject = "JCI Philippines | Account Successfully Verified";
+					if($user->title == 1 || $user->position->category == "National") //if JCI SEN
+						$account->status_id = 3;
+					else //if MEMBER
+						$account->status_id = 1;
 
-							if($user->title == 1 || $user->position->category == "National")
+					$connection = Yii::app()->db;
+					$transaction = $connection->beginTransaction();
+					
+					try
+					{
+						if($account->save(false))
 							{
-								$body = "Your account has been successfully verified and activated by your JCI Chapter President. 
-								However, your account will still be inactive for verification of JCI Headquarters(Administrator) regarding your position and <b>JCI SENATOR NUMBER</b><i>(if JCI Sen)</i>.<br /><br />
-								Please always check your e-mail and keep yourself updated for all of JCI Philippines News & Latest Events. Thank you!<br /><br />
-								JCI Philippines";
-								Account::model()->newSenNotif();
-							}
-							else
-							{
-								$body = "Your account has been successfully verified and activated by your JCI Chapter President. 
-								You can now log-in and use your account by clicking this link : <a href='http://jci.org.ph/mod02/index.php/site/login'>JCI Log-in Page</a> <br /><br />
-								Please always check your e-mail and keep yourself updated for all of JCI Philippines News & Latest Events. Thank you!<br /><br />
-								JCI Philippines";
-							}
+								$transaction->commit();
+								$send = 1;
+								
+								//Email formatting
+								$subject = "JCI Philippines | Account Successfully Verified";
 
-							$send = Account::model()->populateMsgProperties($account->id, $subject, $body);
+								if($user->title == 1 || $user->position->category == "National")
+								{
+									$body = "Your account has been successfully verified and activated by your JCI Chapter President. 
+									However, your account will still be inactive for verification of JCI Headquarters(Administrator) regarding your position and <b>JCI SENATOR NUMBER</b><i>(if JCI Sen)</i>.<br /><br />
+									Please always check your e-mail and keep yourself updated for all of JCI Philippines News & Latest Events. Thank you!<br /><br />
+									JCI Philippines";
+									Account::model()->newSenNotif();
+								}
+								else
+								{
+									$body = "Your account has been successfully verified and activated by your JCI Chapter President. 
+									You can now log-in and use your account by clicking this link : <a href='http://jci.org.ph/mod02/index.php/site/login'>JCI Log-in Page</a> <br /><br />
+									Please always check your e-mail and keep yourself updated for all of JCI Philippines News & Latest Events. Thank you!<br /><br />
+									JCI Philippines";
+								}
 
-							if($send == 1)
-								Yii::app()->user->setFlash('success','You have successfully activated an account!');
-							else
-								Yii::app()->user->setFlash('success','You have successfully activated an account! But have failed sending the e-mail notification.');
-							
-							$this->redirect(array('account/listInactiveDelegates'));
-						}
+								$send = Account::model()->populateMsgProperties($account->id, $subject, $body);
+
+								if($send == 1)
+									Yii::app()->user->setFlash('success','You have successfully activated an account!');
+								else
+									Yii::app()->user->setFlash('success','You have successfully activated an account! But have failed sending the e-mail notification.');
+								
+							}
+					}
+					catch (Exception $e)
+					{
+						$transaction->rollback();
+						Yii::app()->user->setFlash('error', 'An error occured while trying to update the account! Please try again later.');
+					} 
+				} else {
+					$strType = ($user->getMembershipType() == User::REGULAR_MEM) ? 'REGULAR' : 'ASSOCIATE';
+					$max_members_total = Chapter::getMaxMembers($user->getMembershipType(), $user->chapter_id);
+					Yii::app()->user->setFlash('error', "ERROR: Maximum of ({$max_members_total}) {$strType} members allowed in your chapter has been reached.");
 				}
-				catch (Exception $e)
-				{
-					$transaction->rollback();
-					Yii::app()->user->setFlash('error', 'An error occured while trying to update the account! Please try again later.');
-				} 
 			}
 			else
 			{
 				Yii::app()->user->setFlash('error', 'Invalid Account!');
-				$this->redirect(array('account/listInactiveDelegates'));
 			}
+
+			$this->redirect(array('account/listInactiveDelegates'));
 		}
 		else
 			$this->redirect(array('site/login'));
@@ -1535,5 +1556,11 @@ class AccountController extends Controller
 	 	else
 	 		$this->redirect(array('site/login'));
 
+	}
+
+	public function actionTest()
+	{
+		$account = Account::model()->findByPk(145);
+		print_r($account->user->getMembershipType());exit;
 	}
 }

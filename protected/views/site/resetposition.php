@@ -24,8 +24,35 @@
     <h4 class="login-box-msg">Account Reset</h4>
 
     <div class="form">
-      <center><p><small><strong>ENTER YOUR CURRENT POSITION</strong></small></p></center>
       <form method="post">
+
+          <div class="row" style="margin-bottom:15px;">
+            <div class="form-group">
+              <div class="col-sm-4">
+                <label for="pos_category">Birthdate *</label>
+              </div>
+              <div class="col-sm-8">
+                <?php
+                $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                  'attribute' => 'birthdate',
+                  'options'=>array(
+                    'showAnim'=>'slideDown',
+                    'yearRange'=>'-60:-18',
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                    'dateFormat' => 'yy-mm-dd'
+                    ),
+                  'htmlOptions' => array(
+                    'name'=>'birthdate',
+                    'size' => 20,         // textField size
+                    'class' => 'form-control',
+                  ),  
+                ));
+              ?>
+              </div>
+            </div>
+          </div>
+
           <div class="row" style="margin-bottom:15px;">
             <div class="form-group">
               <div class="col-sm-4">

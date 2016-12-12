@@ -73,6 +73,10 @@ class Account extends CActiveRecord
 			'isActive' => array(
 				'condition' => 't.status_id = '.self::STATUS_ACTIVE,
 			),
+
+			'isActiveAndPendingToPres' => array(
+				'condition' => 't.status_id = '.self::STATUS_ACTIVE.' OR t.status_id = '.self::STATUS_INACTIVE_PAUSE,
+			),
 			
 			'isInactive' => array(
 				'condition' => 't.status_id = '.self::STATUS_INACTIVE,

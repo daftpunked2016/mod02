@@ -329,6 +329,7 @@ class SiteController extends Controller
 								{
 									$user->chapter_id = $currentposition->chapter_id;
 									$user->position_id = $currentposition->position_id;
+									$user->birthdate = $_POST['birthdate'];
 
 									if($user->save())
 									{
