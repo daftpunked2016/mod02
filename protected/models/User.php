@@ -281,6 +281,11 @@ class User extends CActiveRecord
 				'condition' => 'account.status_id != 4',
 			),
 
+			'isActiveAndPendingToPres' => array(
+				'join' => 'INNER JOIN jci_account AS account ON account.id = t.account_id',
+				'condition' => 'account.status_id = '.self::STATUS_ACTIVE.' OR account.status_id = '.self::STATUS_INACTIVE_PAUSE,
+			),
+
 			'userAccount' => array(
 				'join' => 'INNER JOIN jci_account AS a ON a.id = t.account_id',
 				'condition' => 'a.account_type_id = 2',
