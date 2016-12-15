@@ -12,4 +12,18 @@
 		<!-- TOTAL -->
 		<?php echo Chapter::model()->getMembershipCount(3, $data->area_no, 3); ?>
 	</td>
+	<!-- START HQ VALUES -->
+	<td>
+		<!-- TOTAL REG RECORDED -->
+		<?php echo Chapter::model()->getMembershipCount(3, $data->area_no, 4); ?>
+	</td>
+	<td>
+		<!-- TOTAL ASSOC RECORDED -->
+		<?php echo Chapter::model()->getMembershipCount(3, $data->area_no, 5); ?>
+	</td>
+	<td>
+		<!-- TOTAL MEMBERSHIP RECORDED -->
+		<?php echo Chapter::model()->getMembershipCount(3, $data->area_no, 6); ?>
+	</td>
+	<!-- END HQ VALUES -->
 </tr>

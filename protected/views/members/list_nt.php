@@ -30,16 +30,19 @@
 				'template' => "{sorter}<table id=\"example2\"class=\"table table-bordered table-hover\" >
 						<thead>
 							<th>Area</th>
-							<th>Regular Members</th>
-							<th>Associate Members</th>
-							<th>Total</th>
+							<th>Regular Members (Active)</th>
+							<th>Associate Members (Active)</th>
+							<th>Total (Active)</th>
+							<th>Regular Members (HQ)</th>
+							<th>Associate Members (HQ)</th>
+							<th>Total (HQ)</th>
 						</thead>
 						<tbody>
 							{items}
 						</tbody>
 					</table>
 					{pager}",
-				'emptyText' => "<tr><td colspan=\"4\">No available entries</td></tr>",
+				'emptyText' => "<tr><td colspan=\"7\">No available entries</td></tr>",
 			));  ?>
 		</div>
 		<div class="box-footer"></div>

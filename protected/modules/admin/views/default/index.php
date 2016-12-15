@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
         <section class="content">
 			<div class="row">
-				<div class="col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 				  <div class="info-box">
 					<span class="info-box-icon bg-aqua"><i class="fa fa-group"></i></span>
 					<div class="info-box-content">
@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				  </div><!-- /.info-box -->
 				</div><!-- /.col -->
 				
-				<div class="col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 				  <div class="info-box bg-green">
 					<span class="info-box-icon"><i class="fa fa-check"></i></span>
 					<div class="info-box-content">
@@ -95,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				  </div><!-- /.info-box -->
 				</div><!-- /.col -->
 				
-				<div class="col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 				  <div class="info-box bg-red">
 					<span class="info-box-icon"><i class="fa fa-close"></i></span>
 					<div class="info-box-content">
@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				  </div><!-- /.info-box -->
 				</div><!-- /.col -->
 
-				<div class="col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 				  <div class="info-box bg-yellow">
 					<span class="info-box-icon"><i class="fa fa-unlock"></i></span>
 					<div class="info-box-content">
@@ -129,7 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			</div>
 
 			<div class="row">
-				<div class="col-md-6 col-lg-6">
+				<div class="col-md-12 col-lg-12">
 					<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 1</h3>
@@ -142,10 +142,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'itemView'=>'_view_region',
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
-											<th>Chapter</th>
-											<th>Active</th>
-											<th>Inactive</th>
-											<th>Total</th>
+											<th>Region</th>
+											<th>Active/Inactive</th>
+											<th>Regular/Associate (Active)</th>
+											<th>Total Account</th>
+											<th>Regular/Associate (HQ)</th>
+											<th>Total (HQ)</th>
 										</thead>
 										<tbody>
 											{items}
@@ -159,7 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               		</div><!-- /.box -->
             	</div>
 
-	            <div class="col-md-6 col-lg-6">
+	            <div class="col-md-12 col-lg-12">
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 2</h3>
@@ -173,10 +175,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'itemView'=>'_view_region',
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
-											<th>Chapter</th>
-											<th>Active</th>
-											<th>Inactive</th>
-											<th>Total</th>
+											<th>Region</th>
+											<th>Active/Inactive</th>
+											<th>Regular/Associate (Active)</th>
+											<th>Total Account</th>
+											<th>Regular/Associate (HQ)</th>
+											<th>Total (HQ)</th>
 										</thead>
 										<tbody>
 											{items}
@@ -190,7 +194,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	              	</div><!-- /.box -->
 				 </div>
 
-				 <div class="col-md-6 col-lg-6">
+				 <div class="col-md-12 col-lg-12">
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 3</h3>
@@ -202,10 +206,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'itemView'=>'_view_region',
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
-											<th>Chapter</th>
-											<th>Active</th>
-											<th>Inactive</th>
-											<th>Total</th>
+											<th>Region</th>
+											<th>Active/Inactive</th>
+											<th>Regular/Associate (Active)</th>
+											<th>Total Account</th>
+											<th>Regular/Associate (HQ)</th>
+											<th>Total (HQ)</th>
 										</thead>
 										<tbody>
 											{items}
@@ -219,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	              	</div><!-- /.box -->
 				 </div>
 
-				 <div class="col-md-6 col-lg-6">
+				 <div class="col-md-12 col-lg-12">
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 4</h3>
@@ -231,10 +237,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'itemView'=>'_view_region',
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
-											<th>Chapter</th>
-											<th>Active</th>
-											<th>Inactive</th>
-											<th>Total</th>
+											<th>Region</th>
+											<th>Active/Inactive</th>
+											<th>Regular/Associate (Active)</th>
+											<th>Total Account</th>
+											<th>Regular/Associate (HQ)</th>
+											<th>Total (HQ)</th>
 										</thead>
 										<tbody>
 											{items}
@@ -248,7 +256,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	              	</div><!-- /.box -->
 				 </div>
 
-				 <div class="col-md-6 col-lg-6">
+				 <div class="col-md-12 col-lg-12">
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 5</h3>
@@ -260,10 +268,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'itemView'=>'_view_region',
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
-											<th>Chapter</th>
-											<th>Active</th>
-											<th>Inactive</th>
-											<th>Total</th>
+											<th>Region</th>
+											<th>Active/Inactive</th>
+											<th>Regular/Associate (Active)</th>
+											<th>Total Account</th>
+											<th>Regular/Associate (HQ)</th>
+											<th>Total (HQ)</th>
 										</thead>
 										<tbody>
 											{items}

@@ -10,6 +10,10 @@
  */
 class Chapter extends CActiveRecord
 {
+	public $total_regular;
+	public $total_associate;
+	public $total_membership;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -140,6 +144,21 @@ class Chapter extends CActiveRecord
 					case 3:
 						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.region_id = :region_id', 'params'=>array(':region_id'=>$scope_id)));
 						break;
+					case 4:
+						// TOTAL COUNT REGULAR BY REGION (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_regular) as total_regular', 'condition'=>'t.region_id = :region_id', 'params'=>array(':region_id'=>$scope_id)));
+						$count = $count->total_regular;
+						break;
+					case 5:
+						// TOTAL COUNT ASSOC BY REGION (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_associate) as total_associate', 'condition'=>'t.region_id = :region_id', 'params'=>array(':region_id'=>$scope_id)));
+						$count = $count->total_associate;
+						break;
+					case 6:
+						// TOTAL COUNT ASSOC AND REG BY REGION (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_regular + max_associate) as total_membership', 'condition'=>'t.region_id = :region_id', 'params'=>array(':region_id'=>$scope_id)));
+						$count = $count->total_membership;
+						break;
 				}
 				break;
 			case 2:
@@ -168,6 +187,21 @@ class Chapter extends CActiveRecord
 						break;
 					case 3:
 						$count = User::model()->userAccount()->isActive()->count(array('join'=>'INNER JOIN jci_chapter c ON t.chapter_id = c.id', 'condition'=>'c.area_no = :area_no', 'params'=>array(':area_no'=>$scope_id)));
+						break;
+					case 4:
+						// TOTAL COUNT REGULAR BY AREA (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_regular) as total_regular', 'condition'=>'t.area_no = :area_no', 'params'=>array(':area_no'=>$scope_id)));
+						$count = $count->total_regular;
+						break;
+					case 5:
+						// TOTAL COUNT ASSOC BY AREA (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_associate) as total_associate', 'condition'=>'t.area_no = :area_no', 'params'=>array(':area_no'=>$scope_id)));
+						$count = $count->total_associate;
+						break;
+					case 6:
+						// TOTAL COUNT ASSOC AND REG BY AREA (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_regular + max_associate) as total_membership', 'condition'=>'t.area_no = :area_no', 'params'=>array(':area_no'=>$scope_id)));
+						$count = $count->total_membership;
 						break;
 				}
 				break;
