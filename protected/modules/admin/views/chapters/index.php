@@ -56,6 +56,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <?php $this->widget('AdminLeftside'); ?>
 
+      <style>
+        .max-values {
+          font-size:16px;
+        }
+      </style>
+
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -74,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="well">
                 <div class="row">
                   <form method="GET" action="<?php echo Yii::app()->createUrl('admin/chapters/index'); ?>">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <label>Category</label>
                       <select id="category" name="category" class="form-control">
                         <option value =''>Select Category..</option>
@@ -84,7 +90,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <select>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                      <label>Voting Strength</label>
+                      <input type="text" name="voting_strength" class="form-control" />
+                    </div>
+
+                    <div class="col-md-3">
                       <label>Area</label>
                       <select id="area_no" name="area_no" class="form-control">
                         <option value =''>Select Area No.</option>
@@ -96,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <select>
                     </div>
 
-                   <div class="col-md-4">
+                   <div class="col-md-3">
                       <label>Region</label>
                       <select id="region" name="region" class="form-control">
                         <option value =''>Select Region..</option>

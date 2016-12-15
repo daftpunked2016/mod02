@@ -6,8 +6,8 @@ $(function() {
 	$(document).on('click', '.edit-chapter', function() {
 		var row_elem = $(this).closest('tr');
 		var chapter_name = row_elem.find('.chapter-name').attr('data-value');
-		var max_regular = row_elem.find('.max-regular').html();
-		var max_associate = row_elem.find('.max-associate').html();
+		var max_regular = row_elem.find('.max-regular').attr('data-value');
+		var max_associate = row_elem.find('.max-associate').attr('data-value');
 
 		//row_elem.find('.chapter-name').html('<input type="text" class="form-control" name="chapter" value="'+chapter_name+'" />');
 		row_elem.find('.max-regular').html('<input type="text" class="form-control quantity" name="max-regular" value="'+max_regular+'" />');
@@ -37,22 +37,21 @@ $(function() {
 		        result = JSON.parse(response);
 		   },
 		   complete: function() {
+		   		alert(result.message);
 		        if(result.type) {
-		        	row_elem.find('.actions').html('<a href="#" class="edit-chapter"><i class="fa fa-pencil"></i></a>'); 
+		        	/*row_elem.find('.actions').html('<a href="#" class="edit-chapter"><i class="fa fa-pencil"></i></a>'); 
 		            //row_elem.find('.chapter-name').html('<mark><strong>'+chapter_name+'</strong></mark>');
 					row_elem.find('.max-regular').html(max_regular);
 					row_elem.find('.max-associate').html(max_associate);
 					row_elem.find('.category').html(result.category);
-					row_elem.find('.voting-strength').html(result.voting_strength);
+					row_elem.find('.voting-strength').html(result.voting_strength);*/
+					location.reload();
 		        } else {
 		        	//row_elem.find('.chapter-name').find('input').prop('disabled', false);
 					row_elem.find('.max-regular').find('input').prop('disabled', false);
 					row_elem.find('.max-associate').find('input').prop('disabled', false);
 		        	row_elem.find('.actions').html('<a href="#" class="save-chapter"><i class="fa fa-check-square-o"></i></a>');
 		        }
-		        
-		        alert(result.message);
-		        
 		   },
 		   error: function() {
 		        alert("ERROR in running requested function. Page will now reload.");

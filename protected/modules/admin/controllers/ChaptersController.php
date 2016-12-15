@@ -3,24 +3,29 @@ class ChaptersController extends Controller
 {
 	public $layout = 'layouts/admin';
 
-	public function actionIndex($category = null, $area_no = null, $region = null)
+	public function actionIndex()
 	{
 		$condition = '';
 		$params = array();
 
-		if($category != null) {
+		if(isset($_GET['category']) && $_GET['category'] != null) {
 			$condition .= 'category = :category';
-			$params[':category'] = $category;
+			$params[':category'] = $_GET['category'];
 		}
 
-		if($area_no != null) {
+		if(isset($_GET['voting_strength']) && $_GET['voting_strength'] != null) {
+			$condition .= 'voting_strength = :voting_strength';
+			$params[':voting_strength'] = $_GET['voting_strength'];
+		}
+
+		if(isset($_GET['area_no']) && $_GET['area_no'] != null) {
 			$condition .= ($condition != '') ? ' AND area_no = :area_no': 'area_no = :area_no';
-			$params[':area_no'] = $area_no;
+			$params[':area_no'] = $_GET['area_no'];
 		}
 
-		if($region != null) {
+		if(isset($_GET['region']) && $_GET['region'] != null) {
 			$condition .= ($condition != '') ? ' AND region_id = :region': 'region_id = :region';
-			$params[':region'] = $region; 
+			$params[':region'] = $_GET['region']; 
 		}
 
 		$chapters = Chapter::model()->findAll(array('condition'=>$condition, 'params'=>$params, 'order'=>'area_no ASC, region_id ASC '));

@@ -45,6 +45,7 @@ class Chapter extends CActiveRecord
 		return array(
 			'users' => array(self::HAS_MANY, 'User', 'chapter_id'),
 			'region' => array(self::BELONGS_TO, 'AreaRegion', 'region_id'),
+			//'account' => array(self::BELONGS_TO, 'Account', array('chapter_id'=>'id'),'through'=>'user'),
 		);
 	}
 
