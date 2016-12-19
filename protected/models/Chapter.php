@@ -173,6 +173,21 @@ class Chapter extends CActiveRecord
 					case 3:
 						$count = User::model()->userAccount()->isActive()->count(array('condition'=>'t.chapter_id = :chapter_id', 'params'=>array(':chapter_id'=>$scope_id)));
 						break;
+					case 4:
+						// TOTAL COUNT REGULAR BY REGION (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_regular) as total_regular', 'condition'=>'t.id = :chapter_id', 'params'=>array(':chapter_id'=>$scope_id)));
+						$count = $count->total_regular;
+						break;
+					case 5:
+						// TOTAL COUNT ASSOC BY REGION (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_associate) as total_associate', 'condition'=>'t.id = :chapter_id', 'params'=>array(':chapter_id'=>$scope_id)));
+						$count = $count->total_associate;
+						break;
+					case 6:
+						// TOTAL COUNT ASSOC AND REG BY REGION (HQ)
+						$count = Chapter::model()->find(array('select'=>'SUM(max_regular + max_associate) as total_membership', 'condition'=>'t.id = :chapter_id', 'params'=>array(':chapter_id'=>$scope_id)));
+						$count = $count->total_membership;
+						break;
 				}
 
 				break;

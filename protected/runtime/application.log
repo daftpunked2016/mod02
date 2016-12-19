@@ -1914,3 +1914,49 @@ Stack trace:
 #24 {main}
 REQUEST_URI=/mod02/index.php/admin/chapters/index
 ---
+2016/12/19 09:35:49 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\mod02\protected\controllers\MembersController.php:128)
+Stack trace:
+#0 C:\xampp\htdocs\mod02\framework\web\CController.php(286): MembersController->runAction()
+#1 C:\xampp\htdocs\mod02\framework\web\CController.php(265): MembersController->runActionWithFilters()
+#2 C:\xampp\htdocs\mod02\framework\web\CWebApplication.php(282): MembersController->run()
+#3 C:\xampp\htdocs\mod02\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\mod02\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\mod02\index.php(13): CWebApplication->run()
+REQUEST_URI=/mod02/index.php/members/list
+in C:\xampp\htdocs\mod02\protected\controllers\MembersController.php (128)
+in C:\xampp\htdocs\mod02\index.php (13)
+2016/12/19 09:35:50 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `jci_user` `t` WHERE account_id =  LIMIT 1.
+in C:\xampp\htdocs\mod02\protected\models\Event.php (139)
+in C:\xampp\htdocs\mod02\protected\components\views\userHeader.php (26)
+in C:\xampp\htdocs\mod02\protected\components\UserHeader.php (15)
+2016/12/19 09:35:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `jci_user` `t` WHERE account_id =  LIMIT 1' in C:\xampp\htdocs\mod02\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\mod02\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\mod02\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\mod02\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mod02\protected\models\Event.php(139): CActiveRecord->find('account_id = ')
+#4 C:\xampp\htdocs\mod02\protected\components\views\userHeader.php(26): Event->countNewEvents()
+#5 C:\xampp\htdocs\mod02\framework\web\CBaseController.php(130): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\mod02\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, false)
+#7 C:\xampp\htdocs\mod02\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, false)
+#8 C:\xampp\htdocs\mod02\protected\components\UserHeader.php(15): CWidget->render('userHeader', Array)
+#9 C:\xampp\htdocs\mod02\framework\web\CBaseController.php(173): UserHeader->run()
+#10 C:\xampp\htdocs\mod02\protected\views\layouts\userPanel.php(63): CBaseController->widget('UserHeader')
+#11 C:\xampp\htdocs\mod02\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mod02\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\mod02\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\mod02\protected\controllers\MembersController.php(202): CController->render('list_chapters', Array)
+#15 [internal function]: MembersController->actionViewRegion('1')
+#16 C:\xampp\htdocs\mod02\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MembersController), Array)
+#17 C:\xampp\htdocs\mod02\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MembersController), Object(ReflectionMethod), Array)
+#18 C:\xampp\htdocs\mod02\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\mod02\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\mod02\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\mod02\framework\web\CWebApplication.php(282): CController->run('viewregion')
+#22 C:\xampp\htdocs\mod02\framework\web\CWebApplication.php(141): CWebApplication->runController('members/viewreg...')
+#23 C:\xampp\htdocs\mod02\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mod02\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/mod02/index.php/members/viewregion?rid=1
+HTTP_REFERER=http://localhost/mod02/index.php/members/list
+---

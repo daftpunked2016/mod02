@@ -30,9 +30,12 @@
 				'template' => "{sorter}<table id=\"example2\"class=\"table table-bordered table-hover\" >
 						<thead>
 							<th>Region</th>
-							<th>Regular Members</th>
-							<th>Associate Members</th>
-							<th>Total</th>
+							<th>Regular Members(Active)</th>
+							<th>Associate Members(Active)</th>
+							<th>Total(Active)</th>
+							<th>Regular Members(HQ)</th>
+							<th>Associate Members(HQ)</th>
+							<th>Total(HQ)</th>
 						</thead>
 						<tbody>
 							{items}
