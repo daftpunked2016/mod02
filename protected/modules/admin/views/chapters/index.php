@@ -142,8 +142,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         										<th>Region</th>
                             <th>Category</th>
                             <th>Voting Strength</th>
-                            <th>MAX Regular</th>
-                            <th>MAX Associate</th>
+                            <th>Active Members / Paid Members <em>(Regular)</em></th>
+                            <th>Active Members / Paid Members <em>(Associate)</em></th>
                             <th>Actions</th>
         									</thead>
         									<tbody>
