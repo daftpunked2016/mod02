@@ -347,19 +347,34 @@ class User extends CActiveRecord
 		return $count;
 	}
 
+	public function ResetAreaRegion($area_no, $id)
+	{
+		$count = User::model()->isReset()->userAccount()->count(array(
+			'join' => 'INNER JOIN jci_chapter AS chapter ON chapter.id = t.chapter_id',
+			'condition' => 'chapter.area_no = '.$area_no.' AND chapter.region_id = '.$id
+		));
+
+		return $count;
+	}
+
 	public function getTotalUsers($area_no, $id)
 	{
-		$active = User::model()->isActive()->userAccount()->count(array(
+		$total = User::model()->userAccount()->count(array(
 			'join' => 'INNER JOIN jci_chapter AS chapter ON chapter.id = t.chapter_id',
 			'condition' => 'chapter.area_no = '.$area_no.' AND chapter.region_id = '.$id
 		));
 
-		$inactive = User::model()->isInactive()->userAccount()->count(array(
-			'join' => 'INNER JOIN jci_chapter AS chapter ON chapter.id = t.chapter_id',
-			'condition' => 'chapter.area_no = '.$area_no.' AND chapter.region_id = '.$id
-		));
+		// $inactive = User::model()->isInactive()->userAccount()->count(array(
+		// 	'join' => 'INNER JOIN jci_chapter AS chapter ON chapter.id = t.chapter_id',
+		// 	'condition' => 'chapter.area_no = '.$area_no.' AND chapter.region_id = '.$id
+		// ));
 
-		$total = $active + $inactive;
+		// $reset = User::model()->isReset()->userAccount()->count(array(
+		// 	'join' => 'INNER JOIN jci_chapter AS chapter ON chapter.id = t.chapter_id',
+		// 	'condition' => 'chapter.area_no = '.$area_no.' AND chapter.region_id = '.$id
+		// ));
+
+		// $total = $active + $inactive + $reset;
 
 		return $total;
 	}

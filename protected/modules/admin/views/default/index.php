@@ -133,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 1</h3>
-		          			<h3 class="box-title pull-right">Total: <?php echo User::model()->isArea1()->userAccount()->count() ?></h3>
+		          			<h3 class="box-title pull-right">GRAND TOTAL HQ PAID: <?php echo Chapter::model()->getMembershipCount(3, 1, 6); ?></h3>
 		                </div><!-- /.box-header -->
 	                	<div class="box-body no-padding">
 			                <!-- <?php //$this->widget('Area1'); ?> -->
@@ -143,11 +143,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
 											<th>Region</th>
-											<th>Active/Inactive</th>
+											<th>Active/Inactive/Reset</th>
 											<th>Regular/Associate (Active)</th>
-											<th>Total Account</th>
-											<th>Regular/Associate (HQ)</th>
-											<th>Total (HQ)</th>
+											<th>Total Account (Database)</th>
+											<th>Regular/Associate (HQ-PAID)</th>
+											<th>Total HQ PAID</th>
 										</thead>
 										<tbody>
 											{items}
@@ -165,7 +165,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 2</h3>
-		          			<h3 class="box-title pull-right">Total: <?php echo User::model()->isArea2()->userAccount()->count() ?></h3>
+		          			<h3 class="box-title pull-right">GRAND TOTAL HQ PAID: <?php echo Chapter::model()->getMembershipCount(3, 2, 6); ?></h3>
 		                </div><!-- /.box-header -->
 	                	<div class="box-body no-padding">
 			                <!-- <?php //$this->widget('Area2'); ?> -->
@@ -176,11 +176,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
 											<th>Region</th>
-											<th>Active/Inactive</th>
+											<th>Active/Inactive/Reset</th>
 											<th>Regular/Associate (Active)</th>
-											<th>Total Account</th>
-											<th>Regular/Associate (HQ)</th>
-											<th>Total (HQ)</th>
+											<th>Total Account (Database)</th>
+											<th>Regular/Associate (HQ-PAID)</th>
+											<th>Total HQ PAID</th>
 										</thead>
 										<tbody>
 											{items}
@@ -198,7 +198,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 3</h3>
-		          			<h3 class="box-title pull-right">Total: <?php echo User::model()->isArea3()->userAccount()->count() ?></h3>
+		          			<h3 class="box-title pull-right">GRAND TOTAL HQ PAID: <?php echo Chapter::model()->getMembershipCount(3, 3, 6); ?></h3>
 		                </div><!-- /.box-header -->
 	                	<div class="box-body no-padding">
 		                <?php  $this->widget('zii.widgets.CListView', array(
@@ -207,11 +207,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
 											<th>Region</th>
-											<th>Active/Inactive</th>
+											<th>Active/Inactive/Reset</th>
 											<th>Regular/Associate (Active)</th>
-											<th>Total Account</th>
-											<th>Regular/Associate (HQ)</th>
-											<th>Total (HQ)</th>
+											<th>Total Account (Database)</th>
+											<th>Regular/Associate (HQ-PAID)</th>
+											<th>Total HQ PAID</th>
 										</thead>
 										<tbody>
 											{items}
@@ -229,7 +229,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 4</h3>
-		          			<h3 class="box-title pull-right">Total: <?php echo User::model()->isArea4()->userAccount()->count() ?></h3>
+		          			<h3 class="box-title pull-right">GRAND TOTAL HQ PAID: <?php echo Chapter::model()->getMembershipCount(3, 4, 6); ?></h3>
 		                </div><!-- /.box-header -->
 	                	<div class="box-body no-padding">
 		                <?php  $this->widget('zii.widgets.CListView', array(
@@ -238,11 +238,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
 											<th>Region</th>
-											<th>Active/Inactive</th>
+											<th>Active/Inactive/Reset</th>
 											<th>Regular/Associate (Active)</th>
-											<th>Total Account</th>
-											<th>Regular/Associate (HQ)</th>
-											<th>Total (HQ)</th>
+											<th>Total Account (Database)</th>
+											<th>Regular/Associate (HQ-PAID)</th>
+											<th>Total HQ PAID</th>
 										</thead>
 										<tbody>
 											{items}
@@ -260,7 +260,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	            	<div class="box">
 		            	<div class="box-header">
 		          			<h3 class="box-title">AREA 5</h3>
-		          			<h3 class="box-title pull-right">Total: <?php echo User::model()->isArea5()->userAccount()->count() ?></h3>
+		          			<h3 class="box-title pull-right">GRAND TOTAL HQ PAID: <?php echo Chapter::model()->getMembershipCount(3, 5, 6); ?></h3>
 		                </div><!-- /.box-header -->
 	                	<div class="box-body no-padding">
 		                <?php  $this->widget('zii.widgets.CListView', array(
@@ -269,11 +269,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
 										<thead>
 											<th>Region</th>
-											<th>Active/Inactive</th>
+											<th>Active/Inactive/Reset</th>
 											<th>Regular/Associate (Active)</th>
-											<th>Total Account</th>
-											<th>Regular/Associate (HQ)</th>
-											<th>Total (HQ)</th>
+											<th>Total Account (Database)</th>
+											<th>Regular/Associate (HQ-PAID)</th>
+											<th>Total HQ PAID</th>
 										</thead>
 										<tbody>
 											{items}

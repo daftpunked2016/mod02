@@ -1,25 +1,20 @@
 <tr>
-	<td><?php echo CHtml::link($data->region, array('members/viewregion', 'rid'=>$data->id)); ?></td>
 	<td>
-		<!-- REGULAR MEMBERS -->
-		<?php echo Chapter::model()->getMembershipCount(1, $data->id, 1); ?>
+		<?php echo CHtml::link($data->region, array('members/viewregion', 'rid'=>$data->id)); ?>
 	</td>
 	<td>
-		<!-- ASSOCIATE MEBMBERS -->
-		<?php echo Chapter::model()->getMembershipCount(1, $data->id, 2); ?>
+		<?php echo User::model()->activeAreaRegion($data->area_no, $data->id).'/'.User::model()->InactiveAreaRegion($data->area_no, $data->id).'/'.User::model()->ResetAreaRegion($data->area_no, $data->id); ?>
 	</td>
 	<td>
-		<!-- TOTAL -->
-		<?php echo Chapter::model()->getMembershipCount(1, $data->id, 3); ?>
+		<?php echo Chapter::model()->getMembershipCount(1, $data->id, 1).'/'.Chapter::model()->getMembershipCount(1, $data->id, 2); ?>
+	</td>
+	<td>
+		<?php echo User::model()->getTotalUsers($data->area_no, $data->id); ?>
 	</td>
 	<!-- START HQ VALUES -->
 	<td>
-		<!-- TOTAL REG RECORDED -->
-		<?php echo Chapter::model()->getMembershipCount(1, $data->id, 4); ?>
-	</td>
-	<td>
-		<!-- TOTAL ASSOC RECORDED -->
-		<?php echo Chapter::model()->getMembershipCount(1, $data->id, 5); ?>
+		<!-- TOTAL REG / TOTAL ASSOC RECORDED -->
+		<?php echo Chapter::model()->getMembershipCount(1, $data->id, 4).'/'.Chapter::model()->getMembershipCount(1, $data->id, 5); ?>
 	</td>
 	<td>
 		<!-- TOTAL MEMBERSHIP RECORDED -->
