@@ -88,6 +88,11 @@ class AccountController extends Controller
 	//Account Registration (Full Step)
 	public function actionRegister()
 	{
+		// if ((strtotime(date('Y-m-d')) - strtotime("2017-04-16")) >= 0) {
+		// 	Yii::app()->user->setFlash('error', 'Registration is turned off. Please contact JCIP HQ or NSG for details.');
+		// 	$this->redirect(array('site/login'));
+		// }
+		
 		$errors = array();
 		$this->layout='//layouts/login';
 		$account = new Account;
@@ -1270,22 +1275,24 @@ class AccountController extends Controller
 					}
 				}
 
-				$accounts = Account::model()->findAll(array(
-					'condition'=>'status_id = 2 AND account_type_id= 2',
-					'order'=>'id desc',
-					));
+				// $accounts = Account::model()->findAll(array(
+				// 	'condition'=>'status_id = 2 AND account_type_id= 2',
+				// 	'order'=>'id desc',
+				// 	));
 
 				
-				foreach($accounts as $account)
-				{
-					if(isset($_GET['search']))
-						$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND '.$searchOption));
-					else
-						$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND chapter_id = '.$restricted_user->chapter_id));
+				// foreach($accounts as $account)
+				// {
+				// 	if(isset($_GET['search']))
+				// 		$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND '.$searchOption));
+				// 	else
+				// 		$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND chapter_id = '.$restricted_user->chapter_id));
 
-					if($user!=null)
-						$inactiveListDelegates[] = $user;
-				}
+				// 	if($user!=null)
+				// 		$inactiveListDelegates[] = $user;
+				// }
+
+				$inactiveListDelegates = User::model()->userAccount()->isInactive()->findAll(array('condition'=>$searchOption, 'order'=>'lastname ASC'));
 				
 				$inactiveListDelegatesDP = new CArrayDataProvider($inactiveListDelegates, array(
 					'pagination' => array(
@@ -1345,22 +1352,24 @@ class AccountController extends Controller
 					}
 				}
 
-				$activeListDelegates = array();
-				$accounts = Account::model()->findAll(array(
-					'condition'=>'status_id = 1 AND account_type_id= 2',
-					'order'=>'id desc',
-					));
+				// $activeListDelegates = array();
+				// $accounts = Account::model()->findAll(array(
+				// 	'condition'=>'status_id = 1 AND account_type_id= 2',
+				// 	'order'=>'id desc',
+				// 	));
 
-				foreach($accounts as $account)
-				{
-					if(isset($_GET['search']))
-						$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND '.$searchOption));
-					else
-						$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND chapter_id = '.$restricted_user->chapter_id));
+				// foreach($accounts as $account)
+				// {
+				// 	if(isset($_GET['search']))
+				// 		$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND '.$searchOption));
+				// 	else
+				// 		$user = User::model()->find(array('condition'=>'account_id = '.$account->id.' AND chapter_id = '.$restricted_user->chapter_id));
 
-					if($user!=null && $user->account_id != $account_id)
-						$activeListDelegates[] = $user;
-				}
+				// 	if($user!=null && $user->account_id != $account_id)
+				// 		$activeListDelegates[] = $user;
+				// }
+
+				$activeListDelegates = User::model()->userAccount()->isActive()->findAll(array('condition'=>$searchOption, 'order'=>'lastname ASC'));
 				
 				$activeListDelegatesDP = new CArrayDataProvider($activeListDelegates, array(
 					'pagination' => array(

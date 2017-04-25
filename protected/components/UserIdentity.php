@@ -27,23 +27,19 @@ class UserIdentity extends CUserIdentity
 		$userinactivepause = Account::model()->isInactivePause()->find('LOWER(username)="'.$username.'" AND  account_type_id IN (2,3,4)');
 		$userreset = Account::model()->isReset()->find('LOWER(username)="'.$username.'" AND  account_type_id IN (2,3,4)');
 		
- 	    if($user==null && $userinactive==null && $userinactivepause==null && $userreset==null)
-            Yii::app()->user->setFlash('error', 'Account not available or invalid!');
-		else if($userinactive!=null || $userinactivepause!=null)
+ 	    if($user==null && $userinactive==null && $userinactivepause==null && $userreset==null) {
+ 	    	Yii::app()->user->setFlash('error', 'Account not available or invalid!');
+ 	    } else if($userinactive!=null || $userinactivepause!=null) {
 			Yii::app()->user->setFlash('error', 'Account is Inactive! Please wait for your LO President approval.');
-		else if($userreset != null)
-		{
-			$this->_id=$userreset->id;
-            $this->username=$userreset->username;
-            $this->errorCode=self::ERROR_NONE;
-		}
-        else if(!$user->validatePassword($this->password))
-       	{ 
+		// } else if($userreset != null) {
+			// $this->_id=$userreset->id;
+			// $this->username=$userreset->username;
+			// $this->errorCode=self::ERROR_NONE;
+			// Yii::app()->user->setFlash('error', 'Updating profile was turned off. Please contact JCIP HQ or NSG for details.');
+		} else if(!$user->validatePassword($this->password)) { 
        		$this->errorCode=self::ERROR_PASSWORD_INVALID;
 			Yii::app()->user->setFlash('error', 'Email / Password invalid!'); 
-		}
-        else
-        {
+		} else {
             $this->_id=$user->id;
             $this->username=$user->username;
             $this->errorCode=self::ERROR_NONE;
