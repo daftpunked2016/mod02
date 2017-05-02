@@ -65,101 +65,107 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <small>Authorized Personnel Only!</small> -->
             <?php echo CHtml::link('AREA '.$chapter->area_no, array('/admin/default/index'))?> - <small><?php echo CHtml::link($region->region, array('/admin/default/listchapters', 'id' => $region->id, 'anum' => $region->area_no))?> - <?php echo $chapter->chapter; ?></small>
           </h1>
+          <br>
+          <?php foreach(Yii::app()->user->getFlashes() as $key=>$message) {
+              echo "<div class='flash-".$key." alert alert-danger'>".$message.'</div>';
+            }
+          ?>
         </section>
 
         <!-- Main content -->
         <section class="content">
-			<div class="row">
-			</div>
+      <div class="row">
+      </div>
 
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="box">
-          	<div class="box-header">
-				     <div class="pull-left">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="box">
+            <div class="box-header">
+             <div class="pull-left">
               <h3>
                 ACTIVE ACCOUNTS OF <?php echo $chapter->chapter ?>
               </h3>                    
              </div>
-        			<div class="pull-right">
+              <div class="pull-right">
                 <h3 class="box-title pull-right">Total: <?php echo User::model()->getChapterTotalUsers($chapter->id); ?></h3>
               </div>
               </div><!-- /.box-header -->
-            	<div class="box-body no-padding">
+              <div class="box-body no-padding">
                   <!-- <?php //$this->widget('Area1'); ?> -->
                 <?php  $this->widget('zii.widgets.CListView', array(
-    							'dataProvider'=>$activeMemDP,
-    							'itemView'=>'_view_accounts',
-    							'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
-    									<thead>
-    										<th>Avatar</th>
-    										<th>Email Address / Username</th>
-    										<th>First Name</th>
-    										<th>Last Name</th>
-    										<th>Chapter</th>
+                  'dataProvider'=>$activeMemDP,
+                  'itemView'=>'_view_accounts',
+                  'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
+                      <thead>
+                        <th>Avatar</th>
+                        <th>Email Address / Username</th>
+                        <th>Name</th>
+                        <th>Chapter</th>
                         <th>Position</th>
-    										<th>MEMBER ID</th>
-    										<th>Action</th>
-    									</thead>
-    									<tbody>
-    										{items}
-    									</tbody>
-    								</table>
-    								{pager}",
-    							'emptyText' => "<tr><td colspan=\"6\">No available entries</td></tr>",
-    							));  ?>
-           		</div><!-- /.box-body -->
+                        <th>MEMBER ID</th>
+                        <th>Action</th>
+                      </thead>
+                      <tbody>
+                        {items}
+                      </tbody>
+                    </table>
+                    {pager}",
+                  'emptyText' => "<tr><td colspan=\"6\">No available entries</td></tr>",
+                  ));  ?>
+              </div><!-- /.box-body -->
               <div class="box-footer">
                 <?php
                   if(count($activeMemDP->rawData) > 0)
                   {
-                    echo CHtml::link('Download to CSV', array('default/listmembers', 'id'=>$chapter->id, 'exports'=>'true'), array('class'=>'btn btn-primary btn-flat', 'id'=>'exports'));
-                    echo CHtml::link('Download Chapter Profile Pictures', array('default/listmembers', 'id'=>$chapter->id, 'profile-pics'=>'true'), array('class'=>'btn btn-danger btn-flat', 'id'=>'profile-pictures', 'style'=>'margin-left: 5px;'));
+                    echo CHtml::link('Download to CSV (Master List)', array('default/listmembers', 'id'=>$chapter->id, 'exports'=>'A'), array('class'=>'btn-sm btn-default', 'id'=>'exports-a'));
+                    echo CHtml::link('Download to CSV (Printed)', array('default/listmembers', 'id'=>$chapter->id, 'exports'=>'P'), array('class'=>'btn-sm btn-primary', 'id'=>'exports-p', 'style'=>'margin-left: 5px;'));
+                    echo CHtml::link('Download to CSV (Not Printed)', array('default/listmembers', 'id'=>$chapter->id, 'exports'=>'N'), array('class'=>'btn-sm btn-info', 'id'=>'exports-n', 'style'=>'margin-left: 5px;'));
+                    echo CHtml::link('Download Printed Profile Pictures ('.$printed_count.')', array('default/listmembers', 'id'=>$chapter->id, 'printed-pics'=>'P'), array('class'=>'btn-sm btn-warning', 'id'=>'printed-pictures', 'style'=>'margin-left: 5px;'));
+                    echo CHtml::link('Download Not Printed Profile Pictures ('.$not_printed_count.')', array('default/listmembers', 'id'=>$chapter->id, 'printed-pics'=>'N'), array('class'=>'btn-sm btn-danger', 'id'=>'not-printed-pictures', 'style'=>'margin-left: 5px;'));
                   }
                 ?>
               </div>
-        		</div><!-- /.box -->
-      	</div>
-			</div>
+            </div><!-- /.box -->
+        </div>
+      </div>
 
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="box">
-          	<div class="box-header">
-        		  <h3>INACTIVE ACCOUNTS OF <?php echo $chapter->chapter ?></h3>
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="box">
+            <div class="box-header">
+              <h3>INACTIVE ACCOUNTS OF <?php echo $chapter->chapter ?></h3>
             </div><!-- /.box-header -->
-          	<div class="box-body no-padding">
+            <div class="box-body no-padding">
               <!-- <?php //$this->widget('Area1'); ?> -->
               <?php  $this->widget('zii.widgets.CListView', array(
-  							'dataProvider'=>$inactiveMemDP,
-  							'itemView'=>'_view_accounts_inactive',
-  							'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
-  									<thead>
-  										<th>Avatar</th>
-  										<th>Email Address / Username</th>
-  										<th>First Name</th>
-  										<th>Last Name</th>
-  										<th>Chapter</th>
-  										<th>Position</th>
+                'dataProvider'=>$inactiveMemDP,
+                'itemView'=>'_view_accounts_inactive',
+                'template' => "{sorter}<table id=\"example1\"class=\"table table-bordered table-hover\" >
+                    <thead>
+                      <th>Avatar</th>
+                      <th>Email Address / Username</th>
+                      <th>Name</th>
+                      <th>Chapter</th>
+                      <th>Position</th>
                       <th>MEMBER ID</th>
-  										<th>Action</th>
-  									</thead>
-  									<tbody>
-  										{items}
-  									</tbody>
-  								</table>
-  								{pager}",
-  							'emptyText' => "<tr><td colspan=\"6\">No available entries</td></tr>",
-  						));  ?>
-         		</div><!-- /.box-body -->
-      		</div><!-- /.box -->
-      	</div>
-			</div>
+                      <th>Action</th>
+                    </thead>
+                    <tbody>
+                      {items}
+                    </tbody>
+                  </table>
+                  {pager}",
+                'emptyText' => "<tr><td colspan=\"6\">No available entries</td></tr>",
+              ));  ?>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </div>
+      </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
       <?php $this->widget('UserFooter'); ?>
-	  
+    
     </div><!-- ./wrapper -->
 
     <!-- REQUIRED JS SCRIPTS -->

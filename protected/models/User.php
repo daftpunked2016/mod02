@@ -261,6 +261,14 @@ class User extends CActiveRecord
 	public function scopes()
 	{
 		return array(
+			'isPrintedId' => array(
+				'condition' => 't.id_status = "P"',
+			),
+
+			'isNotPrintedId' => array(
+				'condition' => 't.id_status = "N"',
+			),
+
 			'isActive' => array(
 				'join' => 'INNER JOIN jci_account AS account ON account.id = t.account_id',
 				'condition' => 'account.status_id = 1',

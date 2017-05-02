@@ -7,8 +7,7 @@
 		<img style="width:50px; height:50px;" src="<?php echo Yii::app()->request->baseUrl; ?>/user_avatars/<?php echo $user_avatar; ?>">
 	</td>
 	<td><?php echo CHtml::encode($data->account->username); ?></td>
-	<td><?php echo CHtml::encode($data->firstname); ?></td>
-	<td><?php echo CHtml::encode($data->lastname); ?></td>
+	<td><?php echo CHtml::encode($data->firstname)." ".CHtml::encode($data->lastname); ?></td>
 	<td>
 		<?php
 			$file = Chapter::model()->findByPk($data->chapter_id);

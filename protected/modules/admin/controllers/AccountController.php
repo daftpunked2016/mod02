@@ -6,8 +6,8 @@ class AccountController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	//public $layout='//layouts/column2';
-	public $layout='layouts/admin';
+	// public $layout='//layouts/column2';
+	public $layout='/layouts/admin';
 
 	/**
 	 * Displays a particular model.
@@ -444,25 +444,29 @@ class AccountController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$userAccounts = User::model()->isActive()->userAccount()->findAll();
-		$searchOption = array();
+		$userAccounts = User::model()->isActive()->userAccount()->findAll(array('order'=>'firstname ASC'));
+		$searchOption = "1";
 
-		if(isset($_GET['name']) OR isset($_GET['chapter']) OR isset($_GET['position'])) 
-		{		
-			if($_GET['name'] !== '')
-			{
-				$searchOption ='firstname LIKE "%'.$_GET['name'].'%" OR lastname LIKE "%'.$_GET['name'].'%"';
-			}
-			if($_GET['chapter'] !== '')	
-			{
-				$searchOption = 'chapter_id = '.$_GET['chapter'];
-			}
-			if($_GET['position'] !== '')	
-			{
-				$searchOption =  'position_id = '.$_GET['position'];
+		if(isset($_GET['name']) OR isset($_GET['chapter']) OR isset($_GET['position'])) {
+
+			if($_GET['name'] == "" && $_GET['chapter'] == "" && $_GET['position'] == "") {
+				yii::app()->user->setFlash('error', 'Please select at least 1 filter options.');
+				$this->redirect(array('account/index'));
 			}
 
-			$userAccounts = User::model()->isActive()->userAccount()->findAll($searchOption);
+			if(!empty($_GET['name'])) {
+				$searchOption .= ' AND CONCAT(firstname," ",lastname) LIKE "%'.$_GET['name'].'%"';
+			}
+
+			if(!empty($_GET['chapter']))	{
+				$searchOption .= ' AND chapter_id = '.$_GET['chapter'];
+			}
+
+			if(!empty($_GET['position'])) {
+				$searchOption .= ' AND position_id = '.$_GET['position'];
+			}
+
+			$userAccounts = User::model()->isActive()->userAccount()->findAll(array('condition'=>$searchOption, 'order'=>'firstname ASC'));
 		}
 
 		$userAccountsDP=new CArrayDataProvider($userAccounts, array(
@@ -471,35 +475,42 @@ class AccountController extends Controller
 			)
 		));
 
+		$chapters = Chapter::model()->findAll(array('order' => 'chapter'));
+		$position = Position::model()->findAll(array('order' => 'category'));
+
 		$this->render('index',array(
 			'userAccountsDP'=>$userAccountsDP,
 			'userAccounts'=>$userAccounts,
+			'position'=>$position,
+			'chapters'=>$chapters,
 		));
 	}
 
 	public function actionInactiveIndex()
 	{
-		$userAccounts = User::model()->isInactive()->userAccount()->findAll();
-		$searchOption = array();
+		$userAccounts = User::model()->isInactive()->userAccount()->findAll(array('order'=>'firstname ASC'));
+		$searchOption = "1";
 
-		if(isset($_GET['name']) OR isset($_GET['chapter']) OR isset($_GET['position'])) 
-		{		
-			if($_GET['name'] !== '')
-			{
-				$searchOption ='firstname LIKE "%'.$_GET['name'].'%" OR lastname LIKE "%'.$_GET['name'].'%"';
-			}
-			if($_GET['chapter'] !== '')	
-			{
-				$searchOption = 'chapter_id = '.$_GET['chapter'];
-			}
-			if($_GET['position'] !== '')	
-			{
-				$searchOption =  'position_id = '.$_GET['position'];
-			}else{
+		if(isset($_GET['name']) OR isset($_GET['chapter']) OR isset($_GET['position'])) {
 
+			if($_GET['name'] == "" && $_GET['chapter'] == "" && $_GET['position'] == "") {
+				yii::app()->user->setFlash('error', 'Please select at least 1 filter options.');
+				$this->redirect(array('account/inactiveindex'));
 			}
 
-			$userAccounts = User::model()->isInactive()->userAccount()->findAll($searchOption);
+			if(!empty($_GET['name'])) {
+				$searchOption .= ' AND CONCAT(firstname," ",lastname) LIKE "%'.$_GET['name'].'%"';
+			}
+
+			if(!empty($_GET['chapter']))	{
+				$searchOption .= ' AND chapter_id = '.$_GET['chapter'];
+			}
+
+			if(!empty($_GET['position'])) {
+				$searchOption .= ' AND position_id = '.$_GET['position'];
+			}
+
+			$userAccounts = User::model()->isInactive()->userAccount()->findAll(array('condition'=>$searchOption, 'order'=>'firstname ASC'));
 		}
 
 		$userAccountsDP=new CArrayDataProvider($userAccounts, array(
@@ -508,35 +519,42 @@ class AccountController extends Controller
 			)
 		));
 
+		$position = Position::model()->findAll(array('order' => 'category'));
+		$chapters = Chapter::model()->findAll(array('order' => 'chapter'));
+
 		$this->render('inactiveindex',array(
 			'userAccountsDP'=>$userAccountsDP,
 			'userAccounts'=>$userAccounts,
+			'position'=>$position,
+			'chapters'=>$chapters,
 		));
 	}
 
 	public function actionResetIndex()
 	{
 		$userAccounts = User::model()->isReset()->userAccount()->findAll();
-		$searchOption = array();
+		$searchOption = "1";
 
-		if(isset($_GET['name']) OR isset($_GET['chapter']) OR isset($_GET['position'])) 
-		{		
-			if($_GET['name'] !== '')
-			{
-				$searchOption ='firstname LIKE "%'.$_GET['name'].'%" OR lastname LIKE "%'.$_GET['name'].'%"';
-			}
-			if($_GET['chapter'] !== '')	
-			{
-				$searchOption = 'chapter_id = '.$_GET['chapter'];
-			}
-			if($_GET['position'] !== '')	
-			{
-				$searchOption =  'position_id = '.$_GET['position'];
-			}else{
+		if(isset($_GET['name']) OR isset($_GET['chapter']) OR isset($_GET['position'])) {
 
+			if($_GET['name'] == "" && $_GET['chapter'] == "" && $_GET['position'] == "") {
+				yii::app()->user->setFlash('error', 'Please select at least 1 filter options.');
+				$this->redirect(array('account/resetindex'));
 			}
 
-			$userAccounts = User::model()->isReset()->userAccount()->findAll($searchOption);
+			if(!empty($_GET['name'])) {
+				$searchOption .= ' AND CONCAT(firstname," ",lastname) LIKE "%'.$_GET['name'].'%"';
+			}
+
+			if(!empty($_GET['chapter']))	{
+				$searchOption .= ' AND chapter_id = '.$_GET['chapter'];
+			}
+
+			if(!empty($_GET['position'])) {
+				$searchOption .= ' AND position_id = '.$_GET['position'];
+			}
+
+			$userAccounts = User::model()->isReset()->userAccount()->findAll(array('condition'=>$searchOption));
 		}
 
 		$userAccountsDP=new CArrayDataProvider($userAccounts, array(
@@ -545,15 +563,20 @@ class AccountController extends Controller
 			)
 		));
 
+		$position = Position::model()->findAll(array('order' => 'category'));
+		$chapters = Chapter::model()->findAll(array('order' => 'chapter'));
+
 		$this->render('resetindex',array(
 			'userAccountsDP'=>$userAccountsDP,
 			'userAccounts'=>$userAccounts,
+			'position'=>$position,
+			'chapters'=>$chapters,
 		));
 	}
 
 	public function actionActiveSen()
 	{
-		$senAccounts = Account::model()->userAccount()->isActiveSen()->findAll();
+		$senAccounts = Account::model()->userAccount()->isActiveSen()->findAll(array('order'=>'u.lastname ASC'));
 
 		$senAccountDP = new CArrayDataProvider($senAccounts, array(
 			'pagination' => array(
@@ -568,7 +591,7 @@ class AccountController extends Controller
 
 	public function actionInactiveSen()
 	{
-		$InactivesenAccounts = Account::model()->userAccount()->isInactiveSen()->findAll();
+		$InactivesenAccounts = Account::model()->userAccount()->isInactiveSen()->findAll(array('order'=>'u.lastname ASC'));
 
 		$InactivesenAccountDP = new CArrayDataProvider($InactivesenAccounts, array(
 			'pagination' => array(
@@ -589,6 +612,9 @@ class AccountController extends Controller
 		->with(array(
 			'position'=>array(
 				'condition'=>'category = "National"',
+				),
+			'user'=>array(
+				'order'=>'lastname ASC',
 				)))
 		->findAll();
 
@@ -697,7 +723,7 @@ class AccountController extends Controller
 
 	public function actionPendingPresident()
 	{
-		$presAccount = Account::model()->userAccount()->presAccount()->findAll();
+		$presAccount = Account::model()->userAccount()->presAccount()->findAll(array('order'=>'u.lastname ASC'));
 
 		$presAccountDP = new CArrayDataProvider($presAccount, array(
 			'pagination' => array(

@@ -181,11 +181,25 @@ class DefaultController extends Controller
 	{
 		$chapter = Chapter::model()->findByPk($id);
 		$region = AreaRegion::model()->findByPk($chapter->region_id);
-		$activemem = User::model()->userAccount()->isActive()->findAll(array('condition' => 'chapter_id ='.$id));
+		$activemem = User::model()->userAccount()->isActive()->findAll(array('condition' => 'chapter_id ='.$id, 'order'=>'firstname ASC'));
 		
 		if(isset($_GET['exports'])) {
 
-			foreach ($activemem as $res) {
+			if ($_GET['exports'] == "P") {
+				$members_data = User::model()->userAccount()->isActive()->isPrintedId()->findAll(array('condition' => 'chapter_id ='.$id, 'order'=>'firstname ASC'));
+			} else if ($_GET['exports'] == "N") {
+				$members_data = User::model()->userAccount()->isActive()->isNotPrintedId()->findAll(array('condition' => 'chapter_id ='.$id, 'order'=>'firstname ASC'));
+			} else {
+				#Method all
+				$members_data = User::model()->userAccount()->isActive()->findAll(array('condition' => 'chapter_id ='.$id, 'order'=>'firstname ASC'));
+			}
+
+			if (empty($members_data)) {
+				Yii::app()->user->setFlash('error', 'No data available. Please try again.');
+				$this->redirect(array('default/listmembers', 'id'=>$id));
+			}
+
+			foreach ($members_data as $res) {
 
 				$a[] = array(
 					"Full Name" => User::model()->getCompleteName2($res->account_id),
@@ -204,11 +218,21 @@ class DefaultController extends Controller
 			}
 		}
 
-		if(isset($_GET['profile-pics'])) {
-			
-			# define file array
-			foreach ($activemem as $res) {
+		if(isset($_GET['printed-pics'])) {
 
+			if ($_GET['printed-pics'] == "P") {
+				$members_data = User::model()->userAccount()->isActive()->isPrintedId()->findAll(array('condition' => 'chapter_id ='.$id, 'order'=>'firstname ASC'));
+			} else {
+				$members_data = User::model()->userAccount()->isActive()->isNotPrintedId()->findAll(array('condition' => 'chapter_id ='.$id, 'order'=>'firstname ASC'));
+			}
+
+			if (empty($members_data)) {
+				Yii::app()->user->setFlash('error', 'No data available. Please try again.');
+				$this->redirect(array('default/listmembers', 'id'=>$id));
+			}
+
+			# define file array
+			foreach ($members_data as $res) {
 				$files[] = Fileupload::model()->getProfilePicture($res->user_avatar);
 			}
 
@@ -232,6 +256,14 @@ class DefaultController extends Controller
 			# close zip
 			$zip->close();
 
+			#Method update id_status to "P" = Printed
+			if ($_GET['printed-pics'] == "N") {
+				foreach ($members_data as $res) {
+					$res->id_status = "P";
+					$res->save();
+				}
+			}
+
 			# send the file to the browser as a download
 			header('Content-disposition: attachment; filename='.str_replace(array('"', "'", ' ', ','), '_', Chapter::model()->getName($chapter->id)).".zip");
 			header('Content-type: application/zip');
@@ -245,12 +277,16 @@ class DefaultController extends Controller
 			)
 		));
 
-		$inactive = User::model()->userAccount()->isInactive()->findAll(array('condition' => 'chapter_id ='.$id));
+		$inactive = User::model()->userAccount()->isInactive()->findAll(array('condition' => 'chapter_id ='.$id, 'order'=>'firstname ASC'));
 		$inactiveMemDP = new CArrayDataProvider($inactive, array(
 			'pagination' => array(
 				'pageSize' => 10
 			)
 		));
+
+		#Method count printed ids
+		$printed_count = User::model()->userAccount()->isActive()->isPrintedId()->count(array('condition' => 'chapter_id ='.$id, 'order'=>'lastname ASC'));
+		$not_printed_count = User::model()->userAccount()->isActive()->isNotPrintedId()->count(array('condition' => 'chapter_id ='.$id, 'order'=>'lastname ASC'));
 
 		$this->render('members', array(
 			// 'transactionsDP'=>$transactionsDP,
@@ -258,6 +294,8 @@ class DefaultController extends Controller
 			'inactiveMemDP'=>$inactiveMemDP,
 			'chapter'=>$chapter,
 			'region'=>$region,
+			'printed_count'=>$printed_count,
+			'not_printed_count'=>$not_printed_count,
 		));
 	}
 }
