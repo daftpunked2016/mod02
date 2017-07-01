@@ -123,7 +123,7 @@ $(function() {
 		var $btn = $(this).button('loading');
 
 		$.ajax({
-	         url: 'http://jci.org.ph/2017TOYMmod/site/viewdetails/',
+	         url: 'http://localhost:8888/toym/site/viewdetails',
 	         method: "POST",
 	         data: {'id': $(this).data('id')},
 	         success: function(response) {

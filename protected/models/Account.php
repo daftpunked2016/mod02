@@ -282,7 +282,6 @@ class Account extends CActiveRecord
 	public function findPasswords($attribute, $params)
     {
         $account= Account::model()->findByPk(Yii::app()->user->id);
-        
         if (!$this->validatePassword($this->current_password))
             $this->addError($attribute, 'Old password is incorrect.');
     }
