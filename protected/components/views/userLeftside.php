@@ -85,6 +85,20 @@
           <span>JCIP Advantage Merchants</span>
         </a>
       </li>
+      <?php if($user->position_id == 11): ?> 
+      <li class="treeview">
+        <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/toym/nominees">
+          <i class="fa fa-laptop"></i>
+          <span>TOYM Nominations</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/toym/nominees?status=3"><i class="fa fa-circle-o"></i> Pending to AC</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/toym/nominees?status=2"><i class="fa fa-circle-o"></i> Pending to NC</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/toym/nominees?status=1"><i class="fa fa-check-circle-o"></i> Approved </span></a></li>
+        </ul>
+      </li>
+      <?php endif; ?>
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
