@@ -109,7 +109,7 @@ class EmailWrapper
 			{
 				$message = Swift_Message::newInstance()
 				->setSubject($this->_subject)
-				->setFrom(array('quadrant@jci.org.ph'=>'JCI Philippines'))
+				->setFrom(array('toym@jci.org.ph'=>'TOYM | JCI Philippines'))
 				->setTo($this->_receivers)
 				->setBody($this->loadTemplate($template), $this->_emailType);
 			}
@@ -117,7 +117,7 @@ class EmailWrapper
 			{
 				$message = Swift_Message::newInstance()
 				->setSubject($this->_subject)
-				->setFrom(array('quadrant@jci.org.ph'=>'JCI Philippines'))
+				->setFrom(array('toym@jci.org.ph'=>'JCI Philippines'))
 				->setTo($this->_receivers)
 				->setBody($this->loadTemplate($template), $this->_emailType)
 				->attach($this->_attachment);

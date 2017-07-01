@@ -1914,6 +1914,7 @@ Stack trace:
 #24 {main}
 REQUEST_URI=/mod02/index.php/admin/chapters/index
 ---
+<<<<<<< Updated upstream
 2016/12/19 09:35:49 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\mod02\protected\controllers\MembersController.php:128)
 Stack trace:
 #0 C:\xampp\htdocs\mod02\framework\web\CController.php(286): MembersController->runAction()
@@ -1959,4 +1960,73 @@ Stack trace:
 #25 {main}
 REQUEST_URI=/mod02/index.php/members/viewregion?rid=1
 HTTP_REFERER=http://localhost/mod02/index.php/members/list
+---
+=======
+2016/12/16 00:01:42 [error] [php] Trying to get property of non-object (/Users/mac/Sites/mod02/protected/modules/admin/views/userBusiness/_list_user_businesses.php:3)
+Stack trace:
+#0 /Users/mac/Sites/mod02/framework/zii/widgets/CListView.php(291): UserBusinessController->renderFile()
+#1 /Users/mac/Sites/mod02/framework/zii/widgets/CBaseListView.php(167): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /Users/mac/Sites/mod02/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback()
+#4 /Users/mac/Sites/mod02/framework/zii/widgets/CBaseListView.php(135): CListView->renderContent()
+#5 /Users/mac/Sites/mod02/framework/web/CBaseController.php(173): CListView->run()
+#6 /Users/mac/Sites/mod02/protected/modules/admin/views/userBusiness/index.php(151): UserBusinessController->widget()
+#7 /Users/mac/Sites/mod02/framework/web/CBaseController.php(126): require()
+#8 /Users/mac/Sites/mod02/framework/web/CBaseController.php(95): UserBusinessController->renderInternal()
+#9 /Users/mac/Sites/mod02/framework/web/CController.php(869): UserBusinessController->renderFile()
+#10 /Users/mac/Sites/mod02/framework/web/CController.php(782): UserBusinessController->renderPartial()
+#11 /Users/mac/Sites/mod02/protected/modules/admin/controllers/UserBusinessController.php(158): UserBusinessController->render()
+#12 /Users/mac/Sites/mod02/framework/web/actions/CInlineAction.php(49): UserBusinessController->actionIndex()
+#13 /Users/mac/Sites/mod02/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /Users/mac/Sites/mod02/framework/web/filters/CFilterChain.php(133): UserBusinessController->runAction()
+#15 /Users/mac/Sites/mod02/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /Users/mac/Sites/mod02/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /Users/mac/Sites/mod02/framework/web/filters/CInlineFilter.php(58): UserBusinessController->filterAccessControl()
+#18 /Users/mac/Sites/mod02/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /Users/mac/Sites/mod02/framework/web/CController.php(291): CFilterChain->run()
+#20 /Users/mac/Sites/mod02/framework/web/CController.php(265): UserBusinessController->runActionWithFilters()
+#21 /Users/mac/Sites/mod02/framework/web/CWebApplication.php(282): UserBusinessController->run()
+#22 /Users/mac/Sites/mod02/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /Users/mac/Sites/mod02/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /Users/mac/Sites/mod02/index.php(13): CWebApplication->run()
+REQUEST_URI=/mod02/index.php/admin/userBusiness/index
+in /Users/mac/Sites/mod02/protected/modules/admin/views/userBusiness/_list_user_businesses.php (3)
+in /Users/mac/Sites/mod02/protected/modules/admin/views/userBusiness/index.php (151)
+in /Users/mac/Sites/mod02/protected/modules/admin/controllers/UserBusinessController.php (158)
+>>>>>>> Stashed changes
+2017/07/01 22:45:56 [error] [exception.CException] CException: ToymNominee and its behaviors do not have a method or closure named "getFullName". in /Users/mac/Sites/mod02/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/mac/Sites/mod02/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getFullName', Array)
+#1 /Users/mac/Sites/mod02/protected/views/toym/_view_nominees.php(12): CActiveRecord->__call('getFullName', Array)
+#2 /Users/mac/Sites/mod02/framework/web/CBaseController.php(130): require('/Users/mac/Site...')
+#3 /Users/mac/Sites/mod02/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/mac/Site...', Array, false)
+#4 /Users/mac/Sites/mod02/framework/zii/widgets/CListView.php(291): CBaseController->renderFile('/Users/mac/Site...', Array)
+#5 /Users/mac/Sites/mod02/framework/zii/widgets/CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 /Users/mac/Sites/mod02/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{sorter}<table ...')
+#8 /Users/mac/Sites/mod02/framework/zii/widgets/CBaseListView.php(135): CBaseListView->renderContent()
+#9 /Users/mac/Sites/mod02/framework/web/CBaseController.php(173): CBaseListView->run()
+#10 /Users/mac/Sites/mod02/protected/views/toym/nominees.php(92): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 /Users/mac/Sites/mod02/framework/web/CBaseController.php(126): require('/Users/mac/Site...')
+#12 /Users/mac/Sites/mod02/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/mac/Site...', Array, true)
+#13 /Users/mac/Sites/mod02/framework/web/CController.php(869): CBaseController->renderFile('/Users/mac/Site...', Array, true)
+#14 /Users/mac/Sites/mod02/framework/web/CController.php(782): CController->renderPartial('nominees', Array, true)
+#15 /Users/mac/Sites/mod02/protected/controllers/ToymController.php(93): CController->render('nominees', Array)
+#16 [internal function]: ToymController->actionNominees(NULL)
+#17 /Users/mac/Sites/mod02/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ToymController), Array)
+#18 /Users/mac/Sites/mod02/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ToymController), Object(ReflectionMethod), Array)
+#19 /Users/mac/Sites/mod02/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#20 /Users/mac/Sites/mod02/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 /Users/mac/Sites/mod02/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#22 /Users/mac/Sites/mod02/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 /Users/mac/Sites/mod02/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 /Users/mac/Sites/mod02/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 /Users/mac/Sites/mod02/framework/web/CController.php(291): CFilterChain->run()
+#26 /Users/mac/Sites/mod02/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 /Users/mac/Sites/mod02/framework/web/CWebApplication.php(282): CController->run('nominees')
+#28 /Users/mac/Sites/mod02/framework/web/CWebApplication.php(141): CWebApplication->runController('toym/nominees')
+#29 /Users/mac/Sites/mod02/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#30 /Users/mac/Sites/mod02/index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/mod02/index.php/toym/nominees
 ---
